@@ -2,12 +2,11 @@
 
 * `App`
   * `SearchIndex`
-  * `NotebooksIndex`
-    * `NotebookIndexItem`
-  * `NotebookForm`
-  * `NotesIndex`
-    * `NoteForm`
-    * `NoteIndexItem`
-  * `NoteDetail`
-    * `NoteTags`
-    * `NoteEditArea`
+  * `ProjectsIndex`
+    * `ProjectIndexItem`
+  * `ProjectForm`
+  * `ProjectDetail`
+    * `ProjectBody`
+    * `ProjectCommentForm`
+    * `ProjectUpdates`
+      * `ProjectUpdatesForm`
