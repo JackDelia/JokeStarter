@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
 
+  has_many :projects
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
