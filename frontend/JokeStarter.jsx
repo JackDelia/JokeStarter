@@ -1,1 +1,2 @@
-console.log("Hi");
+var UserUtil = require("./util/UserUtil"),
+    UserClientActions = require("./actions/UserClientActions");

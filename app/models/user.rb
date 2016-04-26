@@ -2,6 +2,7 @@ require('bcrypt')
 
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
+  validates :username, uniqueness: true
 
   def password=(password)
     @password = password
