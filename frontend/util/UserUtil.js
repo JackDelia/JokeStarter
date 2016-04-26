@@ -1,4 +1,4 @@
-var UserServerActions = require("..action/UserServerActions");
+var UserServerActions = require("../actions/UserServerActions");
 
 module.exports = {
   createUser: function(options){

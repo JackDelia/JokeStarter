@@ -1,5 +1,5 @@
 var Dispatcher = require("../dispatcher/Dispatcher"),
-    UserConstants = require("../constamts/UserConstants");
+    UserConstants = require("../constants/UserConstants");
 
 module.exports = {
   receiveUser: function(user){
