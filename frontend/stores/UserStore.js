@@ -11,6 +11,10 @@ UserStore.currentUser = function(){
   return _user;
 };
 
+UserStore.getCurrentErrors = function(){
+  return _errors;
+};
+
 UserStore.__onDispatch = function(payload){
   _errors = [];
   switch (payload.actionType) {

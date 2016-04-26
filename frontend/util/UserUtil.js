@@ -8,9 +8,7 @@ module.exports = {
       dataType: "json",
       data: {user: options},
       success: UserServerActions.receiveUser,
-      error: function(error){
-        console.log(error);
-      }
+      error: UserServerActions.receiveErrors
     });
   },
 
@@ -21,9 +19,7 @@ module.exports = {
       dataType: "json",
       data: {user: credentials},
       success: UserServerActions.receiveUser,
-      error: function(error){
-        console.log(error);
-      }
+      error: UserServerActions.receiveErrors
     });
   },
 
@@ -33,9 +29,7 @@ module.exports = {
       url: "/session",
       dataType: "json",
       success: UserServerActions.logoutUser,
-      error: function(error){
-        console.log(error);
-      }
+      error: UserServerActions.receiveErrors
     });
   },
 
@@ -44,10 +38,7 @@ module.exports = {
       method: "GET",
       url: "/session",
       dataType: "json",
-      success: UserServerActions.receiveUser,
-      error: function(error){
-        console.log(error);
-      }
+      success: UserServerActions.receiveUser
     });
   }
 };

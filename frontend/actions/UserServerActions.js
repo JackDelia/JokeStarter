@@ -13,5 +13,12 @@ module.exports = {
     Dispatcher.dispatch({
       actionType: UserConstants.LOGOUT_USER
     });
+  },
+
+  receiveErrors: function(errors){
+    Dispatcher.dispatch({
+      actionType: UserConstants.RECEIVE_ERRORS,
+      errors: errors.responseJSON.errors
+    });
   }
 };
