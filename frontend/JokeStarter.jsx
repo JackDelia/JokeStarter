@@ -1,7 +1,10 @@
 var UserForm = require('./components/user/UserForm'),
+    SignInForm = require('./components/user/SignInForm'),
+    SignInButtons = require('./components/user/SignInButtons'),
 
     UserUtil = require("./util/UserUtil"),
     UserClientActions = require("./actions/UserClientActions"),
+    UserStore = require("./stores/UserStore"),
 
     React = require('react'),
     ReactDom = require('react-dom'),
@@ -15,9 +18,13 @@ var UserForm = require('./components/user/UserForm'),
 
 
 var App = React.createClass({
+
+
   render: function(){
+
     return (
     <div className="main">
+      <SignInButtons/>
       <h1>JokeStarter</h1>
       {this.props.children}
     </div>
@@ -28,7 +35,8 @@ var App = React.createClass({
 var routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={UserForm}/>
+      <Route path="signin" component={SignInForm}/>
+      <Route path="signup" component={UserForm}/>
     </Route>
   </Router>
 );

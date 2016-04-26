@@ -7,5 +7,11 @@ module.exports = {
       actionType: UserConstants.RECEIVE_USER,
       user: user
     });
+  },
+
+  logoutUser: function(){
+    Dispatcher.dispatch({
+      actionType: UserConstants.LOGOUT_USER
+    });
   }
 };

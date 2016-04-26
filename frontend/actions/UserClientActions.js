@@ -2,5 +2,8 @@ var UserUtil = require("../util/UserUtil");
 
 
 module.exports = {
-  createUser: UserUtil.createUser
+  createUser: UserUtil.createUser,
+  loginUser: UserUtil.loginUser,
+  signOutUser: UserUtil.signOutUser,
+  checkCurrentUser: UserUtil.checkCurrentUser
 };

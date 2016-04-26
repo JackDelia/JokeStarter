@@ -10,7 +10,12 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = User.find(params[:id])
+    if user
+      render json: @user
+    else
+      render json: {errors: ["User Not Found"]}, status: 404
+    end
   end
 
   private

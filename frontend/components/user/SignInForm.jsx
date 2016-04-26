@@ -24,11 +24,10 @@ module.exports = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
 
-    UserClientActions.createUser({
+    UserClientActions.loginUser({
       username: this.state.username,
       password: this.state.password
     });
-
 
     this.setState({username: "", password: ""});
   },
@@ -45,7 +44,7 @@ module.exports = React.createClass({
           <input type="password" valueLink={this.linkState("password")}/>
         </label><br/>
 
-        <input type="submit" value="Sign Up!"/>
+      <input type="submit" value="Sign In!"/>
       </form>
 
     );
