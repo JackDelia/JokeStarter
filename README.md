@@ -9,10 +9,10 @@
 JokeStarter is a web application inspired by Kickstarter to allow people to get support for elaborate practical jokes. it will be built using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [ ] New account creation, login, and guest/demo login
-- [ ] Smooth, bug-free navigation
+- [x] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for a Kickstarter-inspired site: The ability to browse projects, project creation, and project contribution
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] CSS styling that is satisfactorily visually appealing
 - [ ] A production README, replacing this README
 
