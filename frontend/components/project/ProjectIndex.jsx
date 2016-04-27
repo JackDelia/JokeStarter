@@ -13,15 +13,24 @@ module.exports = React.createClass({
     ProjectClientActions.fetchProjects();
   },
 
+  componentWillUnmount: function(){
+    this.listener.remove();
+  },
+
   changed: function(){
     this.setState({projects: ProjectStore.all()});
+  },
+
+  handleClick: function(id){
+    hashHistory.push("projects/"+id);
   },
 
   render: function(){
     var projectElements = this.state.projects.map(function(project){
       return <li className="project-list-item"
-        key={project.id}>{project.title}</li>;
-    });
+        key={project.id}
+        onClick={this.handleClick.bind(this, project.id)}>{project.title}</li>;
+    }.bind(this));
     return (
       <ul className="project-index-container">
         {projectElements}

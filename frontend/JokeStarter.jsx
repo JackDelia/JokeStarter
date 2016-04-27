@@ -2,6 +2,7 @@ var UserForm = require('./components/user/UserForm'),
     SignInForm = require('./components/user/SignInForm'),
     SignInButtons = require('./components/user/SignInButtons'),
     ProjectIndex = require('./components/project/ProjectIndex'),
+    ProjectDetail = require('./components/project/ProjectDetail'),
 
     UserUtil = require("./util/UserUtil"),
     UserClientActions = require("./actions/UserClientActions"),
@@ -37,8 +38,10 @@ var routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={ProjectIndex}/>
+      <Route path="projects/:projectId" component={ProjectDetail}/>
       <Route path="signin" component={SignInForm}/>
       <Route path="signup" component={UserForm}/>
+
     </Route>
   </Router>
 );
