@@ -12,7 +12,6 @@ function addAll(projects){
   projects.forEach(function(project){
     _projects[project.id] = project;
   });
-
   ProjectStore.__emitChange();
 }
 
@@ -21,7 +20,7 @@ ProjectStore.all = function(){
 
   var projectKeys = Object.keys(_projects);
   for (var i = 0; i < projectKeys.length; i++) {
-    projectsArray.push(projectKeys[i]);
+    projectsArray.push(_projects[projectKeys[i]]);
   }
 
   return projectsArray;

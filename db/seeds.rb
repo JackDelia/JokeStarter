@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+jack = User.new(username: "Jack", password: "terraadnihilumvenire")
+jack.reset_session_token_and_save
+
+Project.create(title: "First",
+  body: "the first project",
+  goal: 25,
+  rewards: {1 => "something", 2 => "something else"},
+  user_id: jack.id)
