@@ -52,41 +52,26 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [x] create new project
+- [x] create `User` model
+- [x] authentication
+- [x] user signup/signin pages
+- [x] blank landing page after signin
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Projects Model, API, and basic APIUtil (1.5 days)
 
 **Objective:** Projects can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Project` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`ProjectsController`)
+- [x] create `Project` model
+- [x] seed the database with a small amount of test data
+- [x] CRUD API for projects (`ProjectsController`)
 - [ ] jBuilder views for projects
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
+- [x] setup Webpack & Flux scaffold
+- [x] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
-
-**Objective:** Projects can be created, read, edited and destroyed with the
-user interface.
-
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each project component, building out the flux loop as needed.
-  - [ ] `ProjectsIndex`
-  - [ ] `ProjectIndexItem`
-  - [ ] `ProjectDetail`
-  - [ ] `ProjectForm`
-- [ ] save Projects to the DB when the form loses focus or is left idle
-  after editing.
-
-### Phase 4: Start Styling (0.5 days)
+### Phase 3: Start Styling (1.5 days)
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
@@ -94,14 +79,40 @@ user interface.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Comments and Updates (1 day)
+
+### Phase 4: Flux Architecture and Router (1.5 days)
+
+**Objective:** Projects can be created, read, edited and destroyed with the
+user interface.
+
+- [ ] setup the flux loop with skeleton files
+- [ ] setup React Router
+- implement each project component, building out the flux loop as needed.
+  - [x] `ProjectsIndex`
+  - [x] `ProjectIndexItem`
+  - [x] `ProjectDetail`
+  - [ ] `ProjectForm`
+- [ ] save Projects to the DB when the form loses focus or is left idle
+  after editing.
+
+### Phase 5: Contributions (1 day)
+
+  **Objective:** Allow Commenting on projects, and allow creators to post updates about projects.
+
+  - [ ] create `Contributions` model
+  - [ ]  build out API, Flux loop, and components for contribution CRUD
+  - [ ] Use CSS to style new views
+
+
+
+### Phase 6: Comments and Updates (1 day)
 
 **Objective:** Allow Commenting on projects, and allow creators to post updates about projects.
 
 - [ ] create `Comment` model
 - [ ] create `Update` model
 - [ ]  build out API, Flux loop, and components for Comment/update CRUD
-- Use CSS to style new views
+- [ ] Use CSS to style new views
 
 
 ### Phase 6: Tags (1.5 days)
@@ -115,7 +126,7 @@ user interface.
   - [ ] searching Projects by tag
 - [ ] Style new elements
 
-### Phase 7: Styling Cleanup and Seeding (1 day)
+### Phase 7: Styling Cleanup and Seeding (2.5 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 
