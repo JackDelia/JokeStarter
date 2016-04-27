@@ -29,7 +29,10 @@ module.exports = React.createClass({
     var projectElements = this.state.projects.map(function(project){
       return <li className="project-list-item"
         key={project.id}
-        onClick={this.handleClick.bind(this, project.id)}>{project.title}</li>;
+        onClick={this.handleClick.bind(this, project.id)}>
+        <img className="thumbnail"
+          src={project.thumbnail_image_url}/>
+        {project.title}</li>;
     }.bind(this));
     return (
       <ul className="project-index-container">

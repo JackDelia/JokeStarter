@@ -16,12 +16,16 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function(){
-    UserStore.addListener(this.changed);
+    this.listener = UserStore.addListener(this.changed);
     UserClientActions.checkCurrentUser();
   },
 
+  componentWillUnmount: function(){
+    this.listener.remove();
+  },
+
   changed: function(){
-    if(UserStore.current_user)
+    if(UserStore.currentUser())
       hashHistory.push("/");
 
     this.setState({errors: UserStore.getCurrentErrors()});

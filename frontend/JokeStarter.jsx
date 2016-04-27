@@ -18,14 +18,16 @@ var UserForm = require('./components/user/UserForm'),
     hashHistory = ReactRouter.hashHistory;
 
 var App = React.createClass({
-
+  clickHeader: function(){
+    hashHistory.push("/");
+  },
 
   render: function(){
 
     return (
     <div className="main">
       <SignInButtons/>
-      <h1 className="main-header">JokeStarter</h1>
+      <h1 className="main-header" onClick={this.clickHeader}>JokeStarter</h1>
       {this.props.children}
     </div>
     );

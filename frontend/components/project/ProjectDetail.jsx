@@ -10,8 +10,12 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function(){
-    ProjectStore.addListener(this.changed);
+    this.listener = ProjectStore.addListener(this.changed);
     ProjectClientActions.fetchProjects();
+  },
+
+  componentWillUnmount: function(){
+    this.listener.remove();
   },
 
   changed: function(){
@@ -28,7 +32,7 @@ module.exports = React.createClass({
       return(
         <li key={rewardKey} className="reward-list-item">
           <h2 className="reward-header">${rewardKey}</h2>
-          <article className="reward-body"><p>{project.rewards[rewardKey]}</p></article>
+          <article className="reward-body">{project.rewards[rewardKey]}</article>
         </li>
       );
     });

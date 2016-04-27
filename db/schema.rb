@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426232905) do
+ActiveRecord::Schema.define(version: 20160427181801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "projects", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.text     "body",       null: false
-    t.json     "rewards",    null: false
+    t.string   "title",                                                                                                                                                                                    null: false
+    t.text     "body",                                                                                                                                                                                     null: false
+    t.json     "rewards",                                                                                                                                                                                  null: false
     t.integer  "user_id"
-    t.float    "goal",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "goal",                                                                                                                                                                                     null: false
+    t.datetime "created_at",                                                                                                                                                                               null: false
+    t.datetime "updated_at",                                                                                                                                                                               null: false
+    t.string   "thumbnail_image_url", default: "http://vignette4.wikia.nocookie.net/thehungergamesrp/images/6/63/Joker_card_coca_cola_by_takes_pics_n_runs-d5wxc0g.jpg/revision/latest?cb=20150408075317"
   end
 
   add_index "projects", ["title"], name: "index_projects_on_title", unique: true, using: :btree

@@ -17,5 +17,36 @@ Project.create(title: "First",
      pariatur. Excepteur sint occaecat cupidatat non proident,
      sunt in culpa qui officia deserunt mollit anim id est laborum.",
   goal: 25,
-  rewards: {1 => "something", 2 => "something else"},
+  rewards: {
+    1 => "something",
+    2 => "something else"},
+  user_id: jack.id)
+
+Project.create(title: "Second",
+    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in r
+      eprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+       pariatur. Excepteur sint occaecat cupidatat non proident,
+       sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    goal: 30,
+    rewards: {
+      1 => "ucbrbufbrb rubfbrufrf irffnrnfn
+      bfu ufbrb frbfu rbfubrbf urbufbbrf uburbf brubfubrbf",
+      2 => "ubvonvebive utbgivetrbverb iugbbruigbiebiug ertgbbebgi
+      bigbebugbrebguir begburbgriu ebguribgir bgrbeiubg",
+      3 => "ufurbfurb ubrubugbrgb urbgbuburb bugburbgub gugbrbgurbgu
+      gubrbug burbgubru gburbgbru gburbgrbu gburbgbrubg
+      ugrbugrb ugbubgr grbguugbug bubuini"},
+    user_id: jack.id)
+
+Project.create(title: "phoned-in",
+  body: "Lorem",
+  goal: 1000000,
+  rewards: {
+    1 => "urbf",
+    2 => "ubvg",
+    3 => "ufurbf"
+  },
   user_id: jack.id)

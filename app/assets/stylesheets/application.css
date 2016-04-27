@@ -20,7 +20,7 @@
  }
 
 .main {
-  background-color: skyblue;
+  background-color: lightblue;
   height: 1000px;
   display: flex;
   flex-direction: column;
@@ -32,12 +32,14 @@
   color: darkblue;
 }
 
-.project-index-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.main-header:hover {
+  cursor: pointer;
 }
+
+.error {
+  color: red;
+}
+
 
 .sign-in-buttons {
   background-color: lightyellow;
@@ -60,13 +62,44 @@
 
 }
 
+.sign-in-button:hover {
+  cursor: pointer;
+}
+
 .sign-in-button:focus {
   outline: none
+}
+
+.project-index-container {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.project-list-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-list-item:hover {
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
 }
 
 .project-detail-container {
   display: flex;
   flex-direction: row;
+  width: 100%;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -80,7 +113,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 
 .reward-list {
   padding: 10px;
@@ -99,4 +131,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.reward-body {
+  width: 80%;
 }
