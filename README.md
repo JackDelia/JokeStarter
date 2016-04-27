@@ -23,11 +23,12 @@ JokeStarter will allow users to do the following:
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account (MVP)
-- [ ] Log in / Log out, including as a Guest/Demo User (MVP)
+- [X] Create an account (MVP)
+- [x] Log in / Log out
+- [ ] login as a Guest/Demo User (MVP)
 - [ ] Create, read, and contribute to potential projects (MVP)
 - [ ] Create detailed explanations of projects (MVP)
-- [ ] View created projects  (MVP)
+- [x] View created projects  (MVP)
 - [ ] Comment on projects (expected feature, but not MVP)
 - [ ] Progress updates on projects (expected feature, but not MVP)
 - [ ] Search Projects (expected feature, but not MVP)

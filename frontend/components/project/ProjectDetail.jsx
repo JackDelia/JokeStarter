@@ -28,16 +28,18 @@ module.exports = React.createClass({
       return(
         <li key={rewardKey} className="reward-list-item">
           <h2 className="reward-header">${rewardKey}</h2>
-          <p className="reward-body">{project.rewards[rewardKey]}</p>
+          <article className="reward-body">{project.rewards[rewardKey]}</article>
         </li>
       );
     });
 
     return (
       <div className="project-detail-container">
-        <h1 className="project-detail-title">{project.title}</h1>
-        <article className="project-detail-body">{project.body}</article>
-        <ul>{rewardElements}</ul>
+        <div className="project-title-body">
+          <h1 className="project-detail-title">{project.title}</h1>
+          <article className="project-detail-body">{project.body}</article>
+        </div>
+        <ul className="reward-list">{rewardElements}</ul>
       </div>
     );
   }

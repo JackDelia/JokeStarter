@@ -17,8 +17,6 @@ var UserForm = require('./components/user/UserForm'),
     IndexRoute = ReactRouter.IndexRoute,
     hashHistory = ReactRouter.hashHistory;
 
-debugger;
-
 var App = React.createClass({
 
 
@@ -27,7 +25,7 @@ var App = React.createClass({
     return (
     <div className="main">
       <SignInButtons/>
-      <h1>JokeStarter</h1>
+      <h1 className="main-header">JokeStarter</h1>
       {this.props.children}
     </div>
     );

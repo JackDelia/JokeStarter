@@ -33,13 +33,17 @@ module.exports = React.createClass({
     if(this.state.currentUser)
       buttons = (<div className="sign-in-buttons">
       Signed in as {this.state.currentUser.username}&nbsp;
-        <button onClick={this.signOut}>Sign Out</button>
+        <button className="sign-in-button"
+          onClick={this.signOut}>Sign Out</button>
         </div>);
     else
       buttons = (
         <div className="sign-in-buttons">
-          <button onClick={this.signIn}>Sign In</button>
-          <button onClick={this.signUp}>Sign Up</button>
+          <button className="sign-in-button"
+            onClick={this.signIn}>Sign In</button>
+
+          <button className="sign-in-button"
+            onClick={this.signUp}>Sign Up</button>
         </div>
       );
 

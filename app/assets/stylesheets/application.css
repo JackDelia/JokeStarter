@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+
+ ul {
+  list-style-type: none;
+ }
+
+.main {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-buttons {
+  background-color: lightgreen;
+  height: 35px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+}
+
+.sign-in-button {
+  margin-top: 20px;
+  float: right;
+  background-color: white;
+  color: coral;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  font-size: 18px;
+
+}
+
+.sign-in-button:focus {
+  outline: none
+}
+
+.project-detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.project-title-body{
+  padding: 20px;
+  background-color: red;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.reward-list {
+  padding: 10px;
+  margin: 0px;
+  width: 25%;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reward-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
