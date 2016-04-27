@@ -3,8 +3,10 @@ var UserForm = require('./components/user/UserForm'),
     SignInButtons = require('./components/user/SignInButtons'),
     ProjectIndex = require('./components/project/ProjectIndex'),
     ProjectDetail = require('./components/project/ProjectDetail'),
+    ProjectForm = require('./components/project/ProjectForm'),
 
     UserUtil = require("./util/UserUtil"),
+    ProjectUtil = require("./util/ProjectUtil"),
     UserClientActions = require("./actions/UserClientActions"),
     UserStore = require("./stores/UserStore"),
 
@@ -16,6 +18,8 @@ var UserForm = require('./components/user/UserForm'),
     Route = ReactRouter.Route,
     IndexRoute = ReactRouter.IndexRoute,
     hashHistory = ReactRouter.hashHistory;
+
+window.ProjectUtil = ProjectUtil;
 
 var App = React.createClass({
   clickHeader: function(){
@@ -34,6 +38,7 @@ var App = React.createClass({
   }
 });
 
+
 var routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
@@ -41,7 +46,7 @@ var routes = (
       <Route path="projects/:projectId" component={ProjectDetail}/>
       <Route path="signin" component={SignInForm}/>
       <Route path="signup" component={UserForm}/>
-
+      <Route path="newproject" component={ProjectForm}/>
     </Route>
   </Router>
 );

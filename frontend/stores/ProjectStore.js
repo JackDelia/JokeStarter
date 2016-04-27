@@ -15,6 +15,11 @@ function addAll(projects){
   ProjectStore.__emitChange();
 }
 
+function addOne(project){
+  _projects[project.id] = project;
+  ProjectStore.__emitChange();
+}
+
 ProjectStore.all = function(){
   var projectsArray = [];
 
@@ -35,7 +40,9 @@ ProjectStore.__onDispatch = function(payload){
     case ProjectConstants.RECEIVE_PROJECTS:
       addAll(payload.projects);
       break;
-    default:
+    case ProjectConstants.RECEIVE_SINGLE_PROJECT:
+      addOne(payload.project);
+      break;
 
   }
 

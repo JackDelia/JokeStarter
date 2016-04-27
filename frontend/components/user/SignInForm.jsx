@@ -42,6 +42,12 @@ module.exports = React.createClass({
     this.setState({username: "", password: ""});
   },
 
+  signUp: function(e){
+    e.preventDefault();
+
+    hashHistory.push("/signup");
+  },
+
   render: function(){
     var errors = UserStore.getCurrentErrors().map(function(error){
       return <p className="error">{error}</p>;
@@ -62,6 +68,10 @@ module.exports = React.createClass({
 
         <input type="submit" value="Sign In!"/>
         </form>
+
+        <div className="link"
+          onClick={this.signUp}>No account? Click here to sign up!
+        </div>
       </div>
 
     );

@@ -1,3 +1,5 @@
+require 'byebug'
+
 class ProjectsController < ApplicationController
 
   def create
@@ -33,6 +35,9 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:user_id, :title, :body, :rewards, :goal)
+    proj = params.require(:project).permit(:user_id, :title, :body, :goal, :thumbnail_image_url)
+    proj[:rewards] = params[:project][:rewards]
+
+    proj
   end
 end

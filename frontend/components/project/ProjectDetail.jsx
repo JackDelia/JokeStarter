@@ -32,7 +32,11 @@ module.exports = React.createClass({
       return(
         <li key={rewardKey} className="reward-list-item">
           <h2 className="reward-header">${rewardKey}</h2>
-          <article className="reward-body">{project.rewards[rewardKey]}</article>
+          <article className="reward-body">
+            <center>
+              {project.rewards[rewardKey]}
+            </center>
+          </article>
         </li>
       );
     });

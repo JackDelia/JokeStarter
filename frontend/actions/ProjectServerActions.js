@@ -7,6 +7,14 @@ module.exports = {
       actionType: ProjectConstants.RECEIVE_PROJECTS,
       projects: projects
     });
+
+  },
+
+  receiveOneProject: function(project){
+    Dispatcher.dispatch({
+      actionType: ProjectConstants.RECEIVE_SINGLE_PROJECT,
+      project: project
+    });
   }
 
 };

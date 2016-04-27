@@ -76,9 +76,9 @@ the API.
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [x] create a basic style guide
+- [x] position elements on the page
+- [x] add basic colors & styles
 
 
 ### Phase 4: Flux Architecture and Router (1.5 days)
@@ -86,8 +86,8 @@ the API.
 **Objective:** Projects can be created, read, edited and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 - implement each project component, building out the flux loop as needed.
   - [x] `ProjectsIndex`
   - [x] `ProjectIndexItem`

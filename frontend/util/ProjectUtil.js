@@ -9,5 +9,15 @@ module.exports = {
       dataType: "json",
       success: ProjectServerActions.receiveAllProjects
     });
+  },
+
+  createProject: function(params){
+    $.ajax({
+      method: "POST",
+      url: "/projects",
+      dataType: "json",
+      data: {project: params},
+      success: ProjectServerActions.receiveOneProject
+    });
   }
 };

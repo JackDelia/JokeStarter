@@ -40,6 +40,13 @@
   color: red;
 }
 
+.link {
+  color: blue;
+}
+
+.link:hover {
+  cursor: pointer;
+}
 
 .sign-in-buttons {
   background-color: lightyellow;
@@ -81,6 +88,7 @@
   margin: 0px;
   padding: 0px;
 }
+
 .project-list-item{
   display: flex;
   flex-direction: column;
@@ -105,6 +113,7 @@
 }
 
 .project-title-body{
+  border: 5px solid lightgreen;
   padding: 20px;
   background-color: white;
   width: 75%;
@@ -127,12 +136,15 @@
 
 .reward-list-item {
   background-color: white;
-  width: 90%;
+  width: 98%;
+  border-bottom: 5px solid lightgreen;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+
+
 .reward-body {
-  width: 80%;
+  padding-bottom: 5px;
 }
