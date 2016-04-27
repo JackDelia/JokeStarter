@@ -20,14 +20,27 @@
  }
 
 .main {
-  background-color: lightblue;
+  background-color: skyblue;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-header {
+  color: darkblue;
+}
+
+.project-index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .sign-in-buttons {
-  background-color: lightgreen;
+  background-color: lightyellow;
   height: 35px;
   width: 100%;
   display: flex;
@@ -60,8 +73,9 @@
 
 .project-title-body{
   padding: 20px;
-  background-color: red;
+  background-color: white;
   width: 75%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,13 +86,16 @@
   padding: 10px;
   margin: 0px;
   width: 25%;
-  background-color: orange;
+  height: 100%;
+  background-color: lightgreen;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .reward-list-item {
+  background-color: white;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
