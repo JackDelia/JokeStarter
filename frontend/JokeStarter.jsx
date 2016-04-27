@@ -22,6 +22,11 @@ var UserForm = require('./components/user/UserForm'),
 window.ProjectUtil = ProjectUtil;
 
 var App = React.createClass({
+
+  componentDidMount: function(){
+    UserClientActions.fetchUsers();
+  },
+
   clickHeader: function(){
     hashHistory.push("/");
   },

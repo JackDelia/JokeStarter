@@ -9,6 +9,13 @@ module.exports = {
     });
   },
 
+  receiveAllUsers: function(users){
+    Dispatcher.dispatch({
+      actionType: UserConstants.RECEIVE_ALL_USERS,
+      users: users
+    });
+  },
+
   logoutUser: function(){
     Dispatcher.dispatch({
       actionType: UserConstants.LOGOUT_USER

@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    render json: User.all
+  end
+    
   def show
     @user = User.find(params[:id])
     if user

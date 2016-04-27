@@ -33,6 +33,15 @@ module.exports = {
     });
   },
 
+  fetchUsers: function(){
+    $.ajax({
+      method: "GET",
+      url: "/users",
+      dataType: "json",
+      success: UserServerActions.receiveAllUsers
+    });
+  },
+
   checkCurrentUser: function(){
     $.ajax({
       method: "GET",

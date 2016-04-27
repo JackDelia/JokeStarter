@@ -5,10 +5,26 @@ var Store = require("flux/utils").Store,
 var UserStore = new Store(Dispatcher);
 
 var _user = null,
+    _allUsers = {},
     _errors = [];
+
+function addUsers(users){
+  for (var i = 0; i < users.length; i++) {
+    _allUsers[users[i].id] = users[i];
+  }
+  UserStore.__emitChange();
+}
 
 UserStore.currentUser = function(){
   return _user;
+};
+
+UserStore.find = function(id){
+  return _allUsers[id];
+};
+
+UserStore.allUsers = function(){
+  return _allUsers;
 };
 
 UserStore.getCurrentErrors = function(){
@@ -29,6 +45,9 @@ UserStore.__onDispatch = function(payload){
     case UserConstants.RECEIVE_ERRORS:
       _errors.push(payload.errors);
       UserStore.__emitChange();
+      break;
+    case UserConstants.RECEIVE_ALL_USERS:
+      addUsers(payload.users);
       break;
   }
 };

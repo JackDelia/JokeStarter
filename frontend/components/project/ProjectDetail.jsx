@@ -1,4 +1,5 @@
 var ProjectClientActions = require("../../actions/ProjectClientActions"),
+    UserStore = require("../../stores/UserStore"),
     ProjectStore = require("../../stores/ProjectStore"),
     React = require('react'),
     hashHistory = require('react-router').hashHistory;
@@ -10,12 +11,14 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function(){
-    this.listener = ProjectStore.addListener(this.changed);
+    this.projectListener = ProjectStore.addListener(this.changed);
+    this.userListener = UserStore.addListener(this.changed);
     ProjectClientActions.fetchProjects();
   },
 
   componentWillUnmount: function(){
-    this.listener.remove();
+    this.projectListener.remove();
+    this.userListener.remove();
   },
 
   changed: function(){
@@ -45,6 +48,9 @@ module.exports = React.createClass({
       <div className="project-detail-container">
         <div className="project-title-body">
           <h1 className="project-detail-title">{project.title}</h1>
+          <h2 className="project-detail-author">
+            {UserStore.find(project.user_id).username}
+          </h2>
           <article className="project-detail-body"><p>{project.body}</p></article>
         </div>
         <ul className="reward-list">{rewardElements}</ul>

@@ -92,13 +92,13 @@ user interface.
   - [x] `ProjectsIndex`
   - [x] `ProjectIndexItem`
   - [x] `ProjectDetail`
-  - [ ] `ProjectForm`
-- [ ] save Projects to the DB when the form loses focus or is left idle
+  - [x] `ProjectForm`
+- [x] save Projects to the DB when the form loses focus or is left idle
   after editing.
 
 ### Phase 5: Contributions (1 day)
 
-  **Objective:** Allow Commenting on projects, and allow creators to post updates about projects.
+  **Objective:** Allow Contributions to projects.
 
   - [ ] create `Contributions` model
   - [ ]  build out API, Flux loop, and components for contribution CRUD
