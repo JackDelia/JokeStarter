@@ -1,5 +1,3 @@
-require 'byebug'
-
 class ProjectsController < ApplicationController
 
   def create
