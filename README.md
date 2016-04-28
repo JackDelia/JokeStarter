@@ -76,7 +76,7 @@ the API.
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
-- [ ] create a basic style guide
+- [X] create a basic style guide
 - [x] position elements on the page
 - [x] add basic colors & styles
 
@@ -100,7 +100,7 @@ user interface.
 
   **Objective:** Allow Contributions to projects.
 
-  - [ ] create `Contributions` model
+  - [X] create `Contributions` model
   - [ ]  build out API, Flux loop, and components for contribution CRUD
   - [ ] Use CSS to style new views
 

@@ -20,7 +20,7 @@
  }
 
 .main {
-  background-color: lightblue;
+  background-color: #FAC4FA;
   height: 1000px;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@
 }
 
 .sign-in-buttons {
-  background-color: lightyellow;
+  background-color: darkgrey;
   height: 45px;
   width: 100%;
   display: flex;
@@ -58,11 +58,34 @@
 
 }
 
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-field {
+  height: 35px;
+  width: 235px;
+  font-size: 25px;
+  color: #321395;
+
+
+}
+
+::-webkit-input-placeholder {
+  color: #9F8DD9;
+}
+
 .new-project-link {
   margin: 40px;
 }
 
-.sign-in-button {
+.logged-in-message {
+  margin-right: 10px;
+}
+
+.button {
   margin-top: 20px;
   float: right;
   background-color: white;
@@ -73,11 +96,11 @@
 
 }
 
-.sign-in-button:hover {
+.button:hover {
   cursor: pointer;
 }
 
-.sign-in-button:focus {
+.button:focus {
   outline: none
 }
 
@@ -118,13 +141,14 @@
 .project-detail-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  margin: 3%;
+  width: 94%;
   align-items: flex-start;
   justify-content: space-between;
 }
 
 .project-title-body{
-  border: 5px solid lightgreen;
+  border: 5px solid #321395;
   padding: 20px;
   background-color: white;
   width: 75%;
@@ -141,11 +165,13 @@
 }
 
 .reward-list {
-  padding: 10px;
-  margin: 0px;
+  padding: 5px;
+  padding-bottom: 0;
+  margin-left: 5%;
+  margin-top: 0;
   width: 25%;
   height: 100%;
-  background-color: lightgreen;
+  background-color: #321395;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,10 +187,18 @@
   align-items: center;
 }
 
+.thumbnail {
+  border: 2px solid #321395;
+}
+
+.project-list-item {
+  color: #321395;
+}
+
 .reward-list-item {
   background-color: white;
   width: 98%;
-  border-bottom: 5px solid lightgreen;
+  border-bottom: 5px solid #321395;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +214,28 @@
   align-items: center;
 }
 
-.add-reward-button {
+.project-form > input {
+  height: 25px;
+  width: 235px;
+  font-size: 25px;
+  color: #321395;
+}
+
+.project-form > .button{
+  margin-top: 20px;
+  float: right;
+  background-color: white;
+  color: coral;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  font-size: 18px;
+}
+
+.project-form > input::-webkit-input-placeholder {
+  font-size: 18px;
+}
+
+.project-form-button {
   margin-top: 20px;
   float: right;
   background-color: white;

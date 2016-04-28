@@ -58,15 +58,17 @@ module.exports = React.createClass({
         {errors}
         <form className="user-form" onSubmit={this.handleSubmit}>
 
-          <label>Username:
-            <input type="text" valueLink={this.linkState("username")}/>
-          </label><br/>
+          <input type="text"
+            placeholder="Username"
+            className="sign-in-field"
+            valueLink={this.linkState("username")}/><br/>
 
-          <label>Password:
-            <input type="password" valueLink={this.linkState("password")}/>
-          </label><br/>
+          <input type="password"
+            placeholder="Password"
+            className="sign-in-field"
+            valueLink={this.linkState("password")}/><br/>
 
-          <input type="submit" value="Sign Up!"/>
+          <input type="submit" className="button" value="Sign Up!"/>
         </form>
       </div>
 

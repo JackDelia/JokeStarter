@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
 
   has_many :projects
+  has_many :contributions
 
   def password=(password)
     @password = password

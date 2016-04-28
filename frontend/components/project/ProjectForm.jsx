@@ -65,41 +65,41 @@ module.exports = React.createClass({
 
     return (
       <form className="project-form" onSubmit={this.handleSubmit}>
-        <label>Title:
-          <input type="text" valueLink={this.linkState("title")}/>
-        </label><br/>
+        <input type="text"
+          placeholder="Project Title"
+          valueLink={this.linkState("title")}/><br/>
 
-        <label>Goal:
-            <input type="number" step="any" valueLink={this.linkState("goal")}/>
-        </label><br/>
+          <input type="number" step="any"
+            placeholder="Funding Goal"
+            valueLink={this.linkState("goal")}/><br/>
 
-        <label>Thumbnail Url:
-          <input type="text" valueLink={this.linkState("imageUrl")}/>
-        </label><br/>
+          <input type="text"
+            placeholder="Thumbnail Url"
+            valueLink={this.linkState("imageUrl")}/><br/>
 
-        <label>Body:
-            <textarea rows="10" cols="40" valueLink={this.linkState("body")}/>
-        </label><br/>
-      <div>Rewards:</div>
+            <textarea
+              rows="10" cols="40"
+              placeholder="Talk About Your Project Here!"
+              valueLink={this.linkState("body")}/><br/>
+
+            <div>Current Rewards:</div>
       <ul className="project-form-rewards">
         {rewardsElements}
       </ul>
 
-      
-      <label>Amount:
+
           <input type="number" step="any"
-            valueLink={this.linkState("currentRewardVal")}/>
-      </label><br/>
+            placeholder="Reward Amount"
+            valueLink={this.linkState("currentRewardVal")}/><br/>
 
-      <label>Reward:
           <textarea rows="5" cols="40"
+            placeholder="Reward Text"
             valueLink={this.linkState("currentRewardBody")}/>
-      </label>
 
-      <button className="add-reward-button" onClick={this.addReward}>Add Reward</button><br/>
+      <button className="button" onClick={this.addReward}>Add Reward</button><br/>
 
 
-      <input type="submit" className="project-submit-button" value="Create Project!"/>
+      <input type="submit" className="button" value="Create Project!"/>
       </form>
     );
   }

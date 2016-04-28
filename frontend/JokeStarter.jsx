@@ -36,7 +36,8 @@ var App = React.createClass({
     return (
     <div className="main">
       <SignInButtons/>
-      <h1 className="main-header" onClick={this.clickHeader}>JokeStarter</h1>
+      <img src="/assets/logo.png"
+        className="main-header" onClick={this.clickHeader}/>
       {this.props.children}
     </div>
     );

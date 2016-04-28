@@ -38,10 +38,13 @@ module.exports = React.createClass({
       return <li className="project-list-item"
         key={project.id}
         onClick={this.handleClick.bind(this, project.id)}>
+        
         <img className="thumbnail"
           src={project.thumbnail_image_url}/>
+
         {project.title}</li>;
     }.bind(this));
+
     return (
       <div className="index-and-link-container">
         <ul className="project-index-container">
