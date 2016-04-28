@@ -58,6 +58,10 @@
 
 }
 
+.new-project-link {
+  margin: 40px;
+}
+
 .sign-in-button {
   margin-top: 20px;
   float: right;
@@ -75,6 +79,13 @@
 
 .sign-in-button:focus {
   outline: none
+}
+
+.index-and-link-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-index-container {
@@ -123,12 +134,28 @@
   align-items: center;
 }
 
+.project-detail-author {
+  font-size: 20px;
+  padding: 0;
+  margin-top: 0;
+}
+
 .reward-list {
   padding: 10px;
   margin: 0px;
   width: 25%;
   height: 100%;
   background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reward-goal {
+  background-color: lightpink;
+  padding: 5%;
+  font-size: 20px;
+  width: 88%;
   display: flex;
   flex-direction: column;
   align-items: center;

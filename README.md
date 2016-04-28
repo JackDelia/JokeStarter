@@ -24,10 +24,10 @@ JokeStarter will allow users to do the following:
 progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [X] Create an account (MVP)
-- [x] Log in / Log out
+- [x] Log in / Log out (MVP)
 - [ ] login as a Guest/Demo User (MVP)
 - [ ] Create, read, and contribute to potential projects (MVP)
-- [ ] Create detailed explanations of projects (MVP)
+- [X] Create detailed explanations of projects (MVP)
 - [x] View created projects  (MVP)
 - [ ] Comment on projects (expected feature, but not MVP)
 - [ ] Progress updates on projects (expected feature, but not MVP)
@@ -67,10 +67,10 @@ the API.
 - [x] create `Project` model
 - [x] seed the database with a small amount of test data
 - [x] CRUD API for projects (`ProjectsController`)
-- [ ] jBuilder views for projects
+- [x] jBuilder views for projects
 - [x] setup Webpack & Flux scaffold
 - [x] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] test out API interaction in the console.
 
 ### Phase 3: Start Styling (1.5 days)
 

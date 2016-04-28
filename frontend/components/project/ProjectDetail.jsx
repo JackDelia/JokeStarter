@@ -53,7 +53,10 @@ module.exports = React.createClass({
           </h2>
           <article className="project-detail-body"><p>{project.body}</p></article>
         </div>
-        <ul className="reward-list">{rewardElements}</ul>
+        <ul className="reward-list">
+          <div className="reward-goal">Goal: {project.goal}</div>
+          {rewardElements}
+        </ul>
       </div>
     );
   }

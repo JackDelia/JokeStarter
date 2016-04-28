@@ -1,5 +1,6 @@
 var ProjectClientActions = require("../../actions/ProjectClientActions"),
     ProjectStore = require("../../stores/ProjectStore"),
+    UserStore = require("../../stores/UserStore"),
     React = require('react'),
     hashHistory = require('react-router').hashHistory;
 
@@ -25,6 +26,13 @@ module.exports = React.createClass({
     hashHistory.push("projects/"+id);
   },
 
+  createNew: function(){
+    if(UserStore.currentUser())
+      hashHistory.push("newproject");
+    else
+      hashHistory.push("signin");
+  },
+
   render: function(){
     var projectElements = this.state.projects.map(function(project){
       return <li className="project-list-item"
@@ -35,9 +43,15 @@ module.exports = React.createClass({
         {project.title}</li>;
     }.bind(this));
     return (
-      <ul className="project-index-container">
-        {projectElements}
-      </ul>
+      <div className="index-and-link-container">
+        <ul className="project-index-container">
+          {projectElements}
+        </ul>
+
+        <div className="new-project-link link" onClick={this.createNew}>
+          Create New Project
+        </div>
+      </div>
     );
   }
 });

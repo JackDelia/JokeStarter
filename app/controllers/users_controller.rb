@@ -3,20 +3,21 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if(@user.reset_session_token_and_save)
       session[:session_token] = @user.session_token
-      render json: @user
+      render :show
     else
       render json: {errors: @user.errors.full_messages}, status: 400
     end
   end
 
   def index
-    render json: User.all
+    @users = User.all
+    render :index
   end
-    
+
   def show
     @user = User.find(params[:id])
     if user
-      render json: @user
+      render :show
     else
       render json: {errors: ["User Not Found"]}, status: 404
     end

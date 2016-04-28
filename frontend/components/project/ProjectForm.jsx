@@ -27,6 +27,8 @@ module.exports = React.createClass({
 
   handleSubmit: function(e){
     e.preventDefault();
+    if(!this.state.imageUrl)
+      this.state.imageUrl = undefined;
     var params = {
       title: this.state.title,
       body: this.state.body,

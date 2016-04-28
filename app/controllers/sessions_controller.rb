@@ -4,15 +4,16 @@ class SessionsController < ApplicationController
     if @user
       @user.reset_session_token_and_save
       session[:session_token] = @user.session_token
-      render json: @user
+      render "users/show"
     else
       render json: {errors: ["Incorrect username/password"]}, status: 400
     end
   end
 
   def show
-    if current_user
-      render json: current_user
+    @user = current_user
+    if @user
+      render "users/show"
     else
       render json: {errors: ["Incorrect username/password"]}, status: 400
     end
