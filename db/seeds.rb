@@ -17,9 +17,9 @@ Project.create(title: "First",
      pariatur. Excepteur sint occaecat cupidatat non proident,
      sunt in culpa qui officia deserunt mollit anim id est laborum.",
   goal: 25,
-  rewards: {
-    1 => "something",
-    2 => "something else"},
+  rewards: [
+    [1, "something"],
+    [20, "something else"]],
   user_id: jack.id)
 
 Project.create(title: "Second",
@@ -31,22 +31,24 @@ Project.create(title: "Second",
        pariatur. Excepteur sint occaecat cupidatat non proident,
        sunt in culpa qui officia deserunt mollit anim id est laborum.",
     goal: 30,
-    rewards: {
-      1 => "ucbrbufbrb rubfbrufrf irffnrnfn
-      bfu ufbrb frbfu rbfubrbf urbufbbrf uburbf brubfubrbf",
-      2 => "ubvonvebive utbgivetrbverb iugbbruigbiebiug ertgbbebgi
-      bigbebugbrebguir begburbgriu ebguribgir bgrbeiubg",
-      3 => "ufurbfurb ubrubugbrgb urbgbuburb bugburbgub gugbrbgurbgu
+    rewards: [
+      [1, "ucbrbufbrb rubfbrufrf irffnrnfn
+      bfu ufbrb frbfu rbfubrbf urbufbbrf uburbf brubfubrbf"],
+
+      [20, "ubvonvebive utbgivetrbverb iugbbruigbiebiug ertgbbebgi
+      bigbebugbrebguir begburbgriu ebguribgir bgrbeiubg"],
+
+      [20, "ufurbfurb ubrubugbrgb urbgbuburb bugburbgub gugbrbgurbgu
       gubrbug burbgubru gburbgbru gburbgrbu gburbgbrubg
-      ugrbugrb ugbubgr grbguugbug bubuini"},
+      ugrbugrb ugbubgr grbguugbug bubuini"]],
     user_id: jack.id)
 
 Project.create(title: "phoned-in",
   body: "Lorem",
   goal: 1000000,
-  rewards: {
-    1 => "urbf",
-    2 => "ubvg",
-    3 => "ufurbf"
-  },
+  rewards:[
+    [1, "urbf"],
+    [2, "ubvg"],
+    [3, "ufurbf"]
+  ],
   user_id: jack.id)

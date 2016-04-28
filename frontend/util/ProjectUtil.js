@@ -11,6 +11,15 @@ module.exports = {
     });
   },
 
+  fetchSingleProject: function(id){
+    $.ajax({
+      method: "GET",
+      url: "/projects/" + id,
+      dataType: "json",
+      success: ProjectServerActions.receiveOneProject
+    });
+  },
+
   createProject: function(params){
     $.ajax({
       method: "POST",

@@ -15,9 +15,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find_by_id(project_params)
+    @project = Project.find_by_id(params[:id])
+    @funding = get_funding(@project)
     if @project
-      render json: @project
+      render :show
     else
       render json: {errors: ["Project Not Found"]}, status: 404
     end
@@ -38,4 +39,13 @@ class ProjectsController < ApplicationController
 
     proj
   end
+
+  def get_funding(project)
+    sum = 0;
+    project.contributions.each do |contribution|
+      sum+= contribution.amount
+    end
+    sum
+  end
+
 end

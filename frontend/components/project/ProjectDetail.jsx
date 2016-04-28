@@ -13,7 +13,7 @@ module.exports = React.createClass({
   componentDidMount: function(){
     this.projectListener = ProjectStore.addListener(this.changed);
     this.userListener = UserStore.addListener(this.changed);
-    ProjectClientActions.fetchProjects();
+    ProjectClientActions.fetchSingleProject(this.props.params.projectId);
   },
 
   componentWillUnmount: function(){
@@ -25,24 +25,29 @@ module.exports = React.createClass({
     this.setState({project: ProjectStore.find(this.props.params.projectId)});
   },
 
+  clickReward: function(){
+
+  },
+
   render: function(){
     var project = this.state.project;
     if(!project)
       return <div/>;
 
-    var rewardsKeys = Object.keys(project.rewards);
-    var rewardElements = rewardsKeys.map(function(rewardKey){
+    
+    var rewardElements = project.rewards.map(function(reward, idx){
       return(
-        <li key={rewardKey} className="reward-list-item">
-          <h2 className="reward-header">${rewardKey}</h2>
+        <li key={idx} onClick={this.clickReward.bind(null, idx)}
+          className="reward-list-item">
+          <h2 className="reward-header">${reward[0]}</h2>
           <article className="reward-body">
             <center>
-              {project.rewards[rewardKey]}
+              {reward[1]}
             </center>
           </article>
         </li>
       );
-    });
+    }.bind(this));
 
     return (
       <div className="project-detail-container">
@@ -54,7 +59,9 @@ module.exports = React.createClass({
           <article className="project-detail-body"><p>{project.body}</p></article>
         </div>
         <ul className="reward-list">
-          <div className="reward-goal">Goal: {project.goal}</div>
+          <div className="reward-goal">
+            ${project.funding} raised out of ${project.goal}
+          </div>
           {rewardElements}
         </ul>
       </div>
