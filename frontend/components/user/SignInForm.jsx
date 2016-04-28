@@ -48,6 +48,14 @@ module.exports = React.createClass({
     hashHistory.push("/signup");
   },
 
+  guestSignIn: function(e){
+    e.preventDefault();
+    UserClientActions.loginUser({
+      username: "Guest",
+      password: "gloriainexcelsiusdiscordia"
+    });
+  },
+
   render: function(){
     var errors = UserStore.getCurrentErrors().map(function(error){
       return <p className="error">{error}</p>;
@@ -73,6 +81,9 @@ module.exports = React.createClass({
 
         <div className="link"
           onClick={this.signUp}>No account? Click here to sign up!
+        </div><br/>
+        <div className="link"
+          onClick={this.guestSignIn}>Or click here to sign in as a guest!
         </div>
       </div>
 

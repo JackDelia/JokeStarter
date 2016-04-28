@@ -8,6 +8,9 @@
 jack = User.new(username: "Jack", password: "terraadnihilumvenire")
 jack.reset_session_token_and_save
 
+guest = User.new(username: "Guest", password: "gloriainexcelsiusdiscordia")
+guest.reset_session_token_and_save
+
 Project.create(title: "First",
   body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
