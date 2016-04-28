@@ -76,7 +76,7 @@ the API.
 
 **Objective:** Existing pages (including singup/signin) will look good.
 
-- [x] create a basic style guide
+- [ ] create a basic style guide
 - [x] position elements on the page
 - [x] add basic colors & styles
 
@@ -105,8 +105,15 @@ user interface.
   - [ ] Use CSS to style new views
 
 
+### Phase 6: More Styling (1.5 days)
 
-### Phase 6: Comments and Updates (1 day)
+  **Objective:** Existing pages (including singup/signin) will look better.
+
+  - [ ] Make styling look more professional
+  - [ ] finalize layout
+  - [ ] focus on colors
+
+### Phase 7: Comments and Updates (1 day)
 
 **Objective:** Allow Commenting on projects, and allow creators to post updates about projects.
 
@@ -116,7 +123,7 @@ user interface.
 - [ ] Use CSS to style new views
 
 
-### Phase 6: Tags (1.5 days)
+### Phase 8: Tags (1.5 days)
 
 **Objective:** Projects can be tagged with multiple tags, and tags are searchable. They also have a type, also searchable
 
@@ -127,7 +134,7 @@ user interface.
   - [ ] searching Projects by tag
 - [ ] Style new elements
 
-### Phase 7: Styling Cleanup and Seeding (2.5 day)
+### Phase 9: Styling Cleanup and Seeding (2.5 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 

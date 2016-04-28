@@ -85,7 +85,7 @@ module.exports = React.createClass({
         {rewardsElements}
       </ul>
 
-
+      
       <label>Amount:
           <input type="number" step="any"
             valueLink={this.linkState("currentRewardVal")}/>
@@ -94,12 +94,12 @@ module.exports = React.createClass({
       <label>Reward:
           <textarea rows="5" cols="40"
             valueLink={this.linkState("currentRewardBody")}/>
-      </label><br/>
+      </label>
 
-      <button onClick={this.addReward}>Add Reward</button>
+      <button className="add-reward-button" onClick={this.addReward}>Add Reward</button><br/>
 
 
-      <input type="submit" value="Create Project!"/>
+      <input type="submit" className="project-submit-button" value="Create Project!"/>
       </form>
     );
   }

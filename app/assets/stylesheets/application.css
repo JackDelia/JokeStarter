@@ -50,7 +50,7 @@
 
 .sign-in-buttons {
   background-color: lightyellow;
-  height: 35px;
+  height: 45px;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
@@ -170,8 +170,22 @@
   align-items: center;
 }
 
-
-
 .reward-body {
   padding-bottom: 5px;
+}
+
+.project-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-reward-button {
+  margin-top: 20px;
+  float: right;
+  background-color: white;
+  color: coral;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  font-size: 18px;
 }
