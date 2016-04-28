@@ -6,18 +6,17 @@ class ContributionsController < ApplicationController
 
   def create
     @contribution = Contribution.new(contribution_params)
+    @project = Project.find(params[:project_id])
+
     if @contribution.save
-      render json: @contribution
+      render "/projects/show"
     else
-      render json: {errors: ["Invalid COntribution"]}
+      render json: {errors: ["Invalid Contribution"]}
     end
   end
 
   private
   def contribution_params
-    par = params.require(:contribution).permit(:user_id, :amount)
-    par[:project_id] = params[:project_id]
-
-    par
+    params.require(:contribution).permit(:user_id, :amount, :project_id)
   end
 end

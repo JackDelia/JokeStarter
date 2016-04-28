@@ -28,5 +28,21 @@ module.exports = {
       data: {project: params},
       success: ProjectServerActions.receiveOneProject
     });
+  },
+
+  contribute: function(projectId, rewardAmount, userId){
+    $.ajax({
+      method: "POST",
+      url: "/projects/"+projectId+"/contributions",
+      dataType: "json",
+      data: {contribution:
+        {
+          amount: rewardAmount,
+          project_id: projectId,
+          user_id: userId
+        }
+      },
+      success: ProjectServerActions.receiveOneProject
+    });
   }
 };

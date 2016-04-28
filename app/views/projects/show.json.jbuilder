@@ -1,3 +1,8 @@
 json.(@project, :id, :rewards, :title, :body, :user_id, :goal, :thumbnail_image_url)
 
-json.funding @funding
+funding = 0
+@project.contributions.each do |contribution|
+  funding += contribution.amount
+end
+
+json.funding funding

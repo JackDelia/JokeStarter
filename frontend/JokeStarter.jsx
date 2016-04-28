@@ -19,7 +19,6 @@ var UserForm = require('./components/user/UserForm'),
     IndexRoute = ReactRouter.IndexRoute,
     hashHistory = ReactRouter.hashHistory;
 
-window.ProjectUtil = ProjectUtil;
 
 
 var App = React.createClass({

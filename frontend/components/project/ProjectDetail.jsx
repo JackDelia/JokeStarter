@@ -25,7 +25,14 @@ module.exports = React.createClass({
     this.setState({project: ProjectStore.find(this.props.params.projectId)});
   },
 
-  clickReward: function(){
+  clickReward: function(rewardAmount){
+    if(!UserStore.currentUser())
+      hashHistory.push("/signin");
+    else {
+      ProjectClientActions.contribute(this.props.params.projectId,
+        rewardAmount,
+        UserStore.currentUser().id);
+    }
 
   },
 
@@ -34,10 +41,10 @@ module.exports = React.createClass({
     if(!project)
       return <div/>;
 
-    
+
     var rewardElements = project.rewards.map(function(reward, idx){
       return(
-        <li key={idx} onClick={this.clickReward.bind(null, idx)}
+        <li key={idx} onClick={this.clickReward.bind(null, reward[0])}
           className="reward-list-item">
           <h2 className="reward-header">${reward[0]}</h2>
           <article className="reward-body">
