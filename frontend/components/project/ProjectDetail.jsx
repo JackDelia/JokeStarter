@@ -2,12 +2,13 @@ var ProjectClientActions = require("../../actions/ProjectClientActions"),
     UserStore = require("../../stores/UserStore"),
     ProjectStore = require("../../stores/ProjectStore"),
     React = require('react'),
+    Modal = require('react-modal'),
     hashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
   getInitialState: function(){
     var project = ProjectStore.find(this.props.params.projectId);
-    return({project: project});
+    return({project: project, showConfirmationModal: false, selectedReward: [0,0]});
   },
 
   componentDidMount: function(){
@@ -25,7 +26,7 @@ module.exports = React.createClass({
     this.setState({project: ProjectStore.find(this.props.params.projectId)});
   },
 
-  clickReward: function(rewardAmount){
+  clickRewardConfirmed: function(rewardAmount){
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
     else {
@@ -33,7 +34,16 @@ module.exports = React.createClass({
         rewardAmount,
         UserStore.currentUser().id);
     }
+    this.setState({showConfirmationModal: false});
 
+  },
+
+  clickReward: function(reward){
+    this.setState({showConfirmationModal: true, selectedReward: reward});
+  },
+
+  closeModal: function(reward){
+    this.setState({showConfirmationModal: false});
   },
 
   render: function(){
@@ -41,10 +51,9 @@ module.exports = React.createClass({
     if(!project)
       return <div/>;
 
-
     var rewardElements = project.rewards.map(function(reward, idx){
       return(
-        <li key={idx} onClick={this.clickReward.bind(null, reward[0])}
+        <li key={idx} onClick={this.clickReward.bind(null, reward)}
           className="reward-list-item">
           <h2 className="reward-header">${reward[0]}</h2>
           <article className="reward-body">
@@ -58,6 +67,29 @@ module.exports = React.createClass({
 
     return (
       <div className="project-detail-container">
+        <Modal
+          className="modal-confirm"
+          overlayClassName="modal-confirm-overlay"
+         isOpen={this.state.showConfirmationModal}>
+         <div classname="confirm-selection-modal">Confirm!</div><br/>
+          <div>Are you sure yoiu want to buy the reward:</div><br/>
+          <div>
+            {this.state.selectedReward[0]} : {this.state.selectedReward[1]}
+          </div>
+          <div className="modal-buttons">
+            <button
+              className="button"
+              onClick={this.clickRewardConfirmed.bind(this, this.state.selectedReward[0])}>
+              Yes
+            </button>
+            <button
+              className="button"
+              onClick={this.closeModal}>
+              No
+            </button>
+          </div>
+        </Modal>
+
         <div className="project-title-body">
           <h1 className="project-detail-title">{project.title}</h1>
           <h2 className="project-detail-author">

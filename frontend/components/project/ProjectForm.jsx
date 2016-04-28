@@ -79,6 +79,7 @@ module.exports = React.createClass({
 
             <textarea
               rows="10" cols="40"
+              className="input-area"
               placeholder="Talk About Your Project Here!"
               valueLink={this.linkState("body")}/><br/>
 
@@ -93,6 +94,7 @@ module.exports = React.createClass({
             valueLink={this.linkState("currentRewardVal")}/><br/>
 
           <textarea rows="5" cols="40"
+            className="input-area"
             placeholder="Reward Text"
             valueLink={this.linkState("currentRewardBody")}/>
 

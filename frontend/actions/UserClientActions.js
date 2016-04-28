@@ -6,5 +6,6 @@ module.exports = {
   loginUser: UserUtil.loginUser,
   signOutUser: UserUtil.signOutUser,
   checkCurrentUser: UserUtil.checkCurrentUser,
-  fetchUsers: UserUtil.fetchUsers
+  fetchUsers: UserUtil.fetchUsers,
+  fetchSingleUser: UserUtil.fetchSingleUser
 };

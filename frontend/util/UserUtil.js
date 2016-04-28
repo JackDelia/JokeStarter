@@ -42,6 +42,15 @@ module.exports = {
     });
   },
 
+  fetchSingleUser: function(id){
+    $.ajax({
+      method: "GET",
+      url: "/users/"+id,
+      dataType: "json",
+      success: UserServerActions.receiveOneUser
+    });
+  },
+
   checkCurrentUser: function(){
     $.ajax({
       method: "GET",

@@ -49,6 +49,8 @@
 }
 
 .sign-in-buttons {
+  position: fixed;
+  top:0px;
   background-color: darkgrey;
   height: 45px;
   width: 100%;
@@ -87,7 +89,6 @@
 
 .button {
   margin-top: 20px;
-  float: right;
   background-color: white;
   color: coral;
   display: inline-block;
@@ -187,6 +188,37 @@
   align-items: center;
 }
 
+.modal-confirm {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  border: 1px solid #ccc;
+  background: #9F8DD9;
+  overflow: auto;
+  WebkitOverflowScrolling: touch;
+  borderRadius: 4px;
+  outline: none;
+  padding: 20px;
+  height: 20%;
+  width: 40%;
+  opacity: .95;
+}
+
+.modal-confirm-overlay {
+  position: 'fixed';
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 7%;
+
+}
+
 .thumbnail {
   border: 2px solid #321395;
 }
@@ -204,6 +236,12 @@
   align-items: center;
 }
 
+.reward-list-item:hover {
+  cursor: pointer;
+  background-color: grey;
+  color: white;
+}
+
 .reward-body {
   padding-bottom: 5px;
 }
@@ -212,6 +250,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 6%;
 }
 
 .project-form > input {
@@ -225,10 +264,14 @@
   margin-top: 20px;
   float: right;
   background-color: white;
+  height: auto;
+  width: auto;
+  padding: 8px;
   color: coral;
   display: inline-block;
   margin: 0 10px 0 0;
   font-size: 18px;
+  margin-top: 2%;
 }
 
 .project-form > input::-webkit-input-placeholder {
@@ -242,5 +285,14 @@
   color: coral;
   display: inline-block;
   margin: 0 10px 0 0;
+  font-size: 18px;
+}
+
+.input-area {
+  font-size: 25px;
+  color: #321395;
+}
+
+.input-area::-webkit-input-placeholder {
   font-size: 18px;
 }

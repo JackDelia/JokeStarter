@@ -16,6 +16,13 @@ module.exports = {
     });
   },
 
+  receiveOneUser: function(user){
+    Dispatcher.dispatch({
+      actionType: UserConstants.RECEIVE_ONE_USER,
+      user: user
+    });
+  },
+
   logoutUser: function(){
     Dispatcher.dispatch({
       actionType: UserConstants.LOGOUT_USER

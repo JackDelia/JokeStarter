@@ -101,8 +101,8 @@ user interface.
   **Objective:** Allow Contributions to projects.
 
   - [X] create `Contributions` model
-  - [ ]  build out API, Flux loop, and components for contribution CRUD
-  - [ ] Use CSS to style new views
+  - [X]  build out API, Flux loop, and components for contribution CRUD
+  - [X] Use CSS to style new views
 
 
 ### Phase 6: More Styling (1.5 days)

@@ -15,6 +15,10 @@ function addUsers(users){
   UserStore.__emitChange();
 }
 
+function addOneUser(user) {
+  _allUsers[user.id] = user;
+}
+
 UserStore.currentUser = function(){
   return _user;
 };
@@ -36,6 +40,7 @@ UserStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case UserConstants.RECEIVE_USER:
       _user = payload.user;
+      _allUsers[payload.user.id] = payload.user;
       UserStore.__emitChange();
       break;
     case UserConstants.LOGOUT_USER:
@@ -48,6 +53,9 @@ UserStore.__onDispatch = function(payload){
       break;
     case UserConstants.RECEIVE_ALL_USERS:
       addUsers(payload.users);
+      break;
+    case UserConstants.RECEIVE_ONE_USER:
+      addOneUser(payload.user);
       break;
   }
 };

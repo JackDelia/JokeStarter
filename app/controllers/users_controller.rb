@@ -1,3 +1,5 @@
+require 'byebug'
+
 class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if user
+    if @user
       render :show
     else
       render json: {errors: ["User Not Found"]}, status: 404
