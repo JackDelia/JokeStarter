@@ -288,6 +288,13 @@
   font-size: 18px;
 }
 
+.user-detail-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .input-area {
   font-size: 25px;
   color: #321395;

@@ -1,7 +1,7 @@
 json.(@user, :username, :id)
 
 if @user = current_user
-  json.money = @user.money_in_cents
+  json.money @user.money_in_cents
 end
 
 if(@user)

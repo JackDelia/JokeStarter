@@ -38,7 +38,7 @@ module.exports = React.createClass({
     var userEditButton = "";
     var moneyElement = "";
     var addMoneyButton = "";
-    if(user === UserStore.currentUser()){
+    if(user.id === UserStore.currentUser().id){
       addMoneyButton = (
         <div className="link">Click Here To Add Money To Your Account</div>
       );
@@ -47,7 +47,15 @@ module.exports = React.createClass({
         <div className="link">Click Here To Edit Account</div>
       );
 
-      moneyElement = <div>{user.money}</div>;
+      var moneyString = user.money;
+      if(moneyString%100 === 0)
+        moneyString = moneyString/100 + ".00";
+      else if (moneyString%10 === 0)
+        moneyString = moneyString/100 + "0";
+      else
+        moneyString = moneyString/100;
+
+      moneyElement = <div>Money: ${moneyString}</div>;
     }
     var projectElements = user.projects.map(function(project){
       return (
@@ -64,7 +72,7 @@ module.exports = React.createClass({
     return (
       <div className="user-detail-container">
         <h1>Profile For {user.username}</h1>
-        <h2>Projects:</h2>
+        <h2>Projects</h2>
         <ul className="project-index-container">
           {projectElements}
         </ul><br/>
