@@ -20,6 +20,13 @@ function addOne(project){
   ProjectStore.__emitChange();
 }
 
+function addComment(comment) {
+  var toComment = _projects[comment.projectId];
+
+  if(toComment.comments)
+    toComment.comments.push(comment);
+}
+
 ProjectStore.all = function(){
   var projectsArray = [];
 
@@ -42,6 +49,9 @@ ProjectStore.__onDispatch = function(payload){
       break;
     case ProjectConstants.RECEIVE_SINGLE_PROJECT:
       addOne(payload.project);
+      break;
+    case ProjectConstants.RECEIVE_SINGLE_COMMENT:
+      addComment(payload.comment);
       break;
 
   }

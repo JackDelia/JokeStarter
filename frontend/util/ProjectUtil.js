@@ -44,5 +44,15 @@ module.exports = {
       },
       success: ProjectServerActions.receiveOneProject
     });
+  },
+
+  addComment: function(projectId, params){
+    $.ajax({
+      method: "POST",
+      url: "/projects/"+projectId+"/comments",
+      dataType: "json",
+      data: {comment: params},
+      success: ProjectServerActions.receiveOneComment
+    });
   }
 };

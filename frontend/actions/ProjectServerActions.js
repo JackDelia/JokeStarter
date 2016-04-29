@@ -15,6 +15,13 @@ module.exports = {
       actionType: ProjectConstants.RECEIVE_SINGLE_PROJECT,
       project: project
     });
+  },
+
+  receiveOneComment: function(comment){
+    Dispatcher.dispatch({
+      actionType: ProjectConstants.RECEIVE_SINGLE_COMMENT,
+      comment: comment
+    });
   }
 
 };

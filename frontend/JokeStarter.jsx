@@ -5,6 +5,8 @@ var UserForm = require('./components/user/UserForm'),
     ProjectIndex = require('./components/project/ProjectIndex'),
     ProjectDetail = require('./components/project/ProjectDetail'),
     ProjectForm = require('./components/project/ProjectForm'),
+    ProjectDetailBase = require('./components/project/ProjectDetailBase'),
+    ProjectComments = require('./components/project/ProjectComments'),
 
     UserUtil = require("./util/UserUtil"),
     ProjectUtil = require("./util/ProjectUtil"),
@@ -50,7 +52,10 @@ var routes = (
   <Router onUpdate={function(){ window.scrollTo(0, 0);}} history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={ProjectIndex}/>
-      <Route path="projects/:projectId" component={ProjectDetail}/>
+      <Route path="projects/:projectId" component={ProjectDetail}>
+        <IndexRoute component={ProjectDetailBase}/>
+        <Route path="/comments" component={ProjectComments}/>
+      </Route>
       <Route path="signin" component={SignInForm}/>
       <Route path="signup" component={UserForm}/>
       <Route path="users/:userId" component={UserDetail}/>

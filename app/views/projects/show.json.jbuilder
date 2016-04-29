@@ -5,4 +5,6 @@ funding = 0
   funding += contribution.amount
 end
 
+json.comments @project.comments, :body, :id, :user_id
+
 json.funding funding
