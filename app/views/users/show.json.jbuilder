@@ -1,8 +1,8 @@
 json.(@user, :username, :id)
 
-if @user == current_user
-  json.money @user.money_in_cents
-end
+
+json.money @user.money_in_cents
+
 
 if(@user)
   json.projects @user.projects, :title, :id, :thumbnail_image_url
