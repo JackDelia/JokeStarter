@@ -8,5 +8,5 @@ module.exports = {
   checkCurrentUser: UserUtil.checkCurrentUser,
   fetchUsers: UserUtil.fetchUsers,
   fetchSingleUser: UserUtil.fetchSingleUser,
-  payMoney: UserUtil.payMoney
+  alterMoney: UserUtil.alterMoney,
 };

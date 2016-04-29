@@ -38,8 +38,10 @@ module.exports = React.createClass({
         rewardAmount,
         UserStore.currentUser().id);
 
-        UserClientActions.payMoney(rewardAmount, UserStore.currentUser().id);
-        
+        var changeAmount = UserStore.currentUser().money -rewardAmount;
+
+        UserClientActions.alterMoney(changeAmount, UserStore.currentUser().id);
+
         this.setState({showConfirmationModal: false});
     }
 
@@ -95,7 +97,7 @@ module.exports = React.createClass({
           overlayClassName="modal-confirm-overlay"
          isOpen={this.state.showConfirmationModal}>
          <div classname="confirm-selection-modal">Confirm!</div><br/>
-          <div>Are you sure yoiu want to buy the reward:</div><br/>
+          <div>Are you sure you want to buy the reward:</div><br/>
           <div>
             {this.state.selectedReward[0]} : {this.state.selectedReward[1]}
           </div>

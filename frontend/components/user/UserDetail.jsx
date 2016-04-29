@@ -7,7 +7,7 @@ var UserClientActions = require("../../actions/UserClientActions"),
 module.exports = React.createClass({
   getInitialState: function(){
     var user = UserStore.find(this.props.params.userId);
-    return({user: user, editFormOpen: false, addMoneyFormOpen: false});
+    return({user: user, editFormOpen: false, addMoneyFormOpen: false, moneyAmount: ""});
   },
 
   componentDidMount: function(){
@@ -27,6 +27,23 @@ module.exports = React.createClass({
     hashHistory.push("/projects/"+id);
   },
 
+  openMoneyModal: function(){
+    this.setState({addMoneyFormOpen: true});
+  },
+
+  updateMoneyField: function(e){
+    this.setState({moneyAmount: e.target.value});
+  },
+
+  addMoney: function(e){
+    e.preventDefault();
+
+    var changeAmount = UserStore.currentUser().money + this.state.moneyAmount;
+
+    this.setState({addMoneyFormOpen: false});
+    UserClientActions.alterMoney(changeAmount, UserStore.currentUser().id);
+  },
+
   render: function(){
     var user = this.state.user;
     if(!user)
@@ -41,7 +58,10 @@ module.exports = React.createClass({
     var addMoneyButton = "";
     if(UserStore.currentUser() && user.id === UserStore.currentUser().id){
       addMoneyButton = (
-        <div className="link">Click Here To Add Money To Your Account</div>
+        <div className="link"
+          onClick={this.openMoneyModal}>
+          Click Here To Add Money To Your Account
+        </div>
       );
 
       userEditButton = (
@@ -81,6 +101,18 @@ module.exports = React.createClass({
         {moneyElement}
         {addMoneyButton}
         {userEditButton}
+
+      <Modal isOpen={this.state.addMoneyFormOpen}
+        className="modal-confirm">
+        <form id="money-form" onSubmit={this.addMoney}>
+          <input type="number"
+            step="any"
+            placeholder="Enter Amount Here"
+            value={this.state.moneyAmount}
+            onChange={this.updateMoneyField}/>
+          <input type="submit" value ="Add Money!" className="button"/>
+        </form>
+      </Modal>
       </div>
     );
   }

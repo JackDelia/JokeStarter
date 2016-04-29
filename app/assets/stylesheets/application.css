@@ -10,9 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *2bde73 green
+ *4f4ce3 blue
+ *
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
 
 
  ul {
@@ -20,8 +29,11 @@
  }
 
 .main {
-  background-color: #FAC4FA;
+  background-color: white;
   height: 1000px;
+  width: 100%;
+  padding: 6%;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +63,8 @@
 .sign-in-buttons {
   position: fixed;
   top:0px;
-  background-color: darkgrey;
+  border-bottom: 1px solid lightgrey;
+  background-color: white;
   height: 45px;
   width: 100%;
   display: flex;
@@ -75,9 +88,7 @@
 
 }
 
-::-webkit-input-placeholder {
-  color: #9F8DD9;
-}
+
 
 .new-project-link {
   margin: 40px;
@@ -89,11 +100,15 @@
 
 .button {
   margin-top: 20px;
-  background-color: white;
-  color: coral;
-  display: inline-block;
+  background-color: #2bde73;
+  color: white;
+  border-radius: 3px;
+  border: 1px solid black;
   margin: 0 10px 0 0;
-  font-size: 18px;
+  font-size: 15px;
+  padding: 7px;
+  font-weight: normal;
+
 
 }
 
@@ -106,10 +121,13 @@
 }
 
 .index-and-link-container {
+  margin-top: 3%;
   width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .project-index-container {
@@ -149,7 +167,7 @@
 }
 
 .project-title-body{
-  border: 5px solid #321395;
+  border: 5px solid #2bde73;
   padding: 20px;
   background-color: white;
   width: 75%;
@@ -172,7 +190,7 @@
   margin-top: 0;
   width: 25%;
   height: 100%;
-  background-color: #321395;
+  background-color: #2bde73;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,7 +215,7 @@
   top: 20%;
   left: 20%;
   border: 1px solid #ccc;
-  background: #9F8DD9;
+  background: white;
   overflow: auto;
   WebkitOverflowScrolling: touch;
   borderRadius: 4px;
@@ -234,7 +252,7 @@
 .reward-list-item {
   background-color: white;
   width: 98%;
-  border-bottom: 5px solid #321395;
+  border-bottom: 5px solid #2bde73;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,7 +279,7 @@
   height: 25px;
   width: 235px;
   font-size: 25px;
-  color: #321395;
+  color: black;
 }
 
 .project-form > .button{
@@ -301,7 +319,7 @@
 
 .input-area {
   font-size: 25px;
-  color: #321395;
+  color: black;
 }
 
 .input-area::-webkit-input-placeholder {

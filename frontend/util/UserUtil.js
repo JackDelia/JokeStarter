@@ -58,5 +58,15 @@ module.exports = {
       dataType: "json",
       success: UserServerActions.receiveUser
     });
+  },
+
+  alterMoney: function(amount, id){
+    $.ajax({
+      method: "PATCH",
+      url: "/users/"+id,
+      dataType: "json",
+      data: {user: {money_in_cents: amount}},
+      success: UserServerActions.receiveOneUser
+    });
   }
 };

@@ -1,5 +1,3 @@
-require 'byebug'
-
 class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
@@ -8,6 +6,15 @@ class UsersController < ApplicationController
       render :show
     else
       render json: {errors: @user.errors.full_messages}, status: 400
+    end
+  end
+
+  def update
+    @user = User.find(params[:id]);
+    if @user.update(user_params)
+      render :show
+    else
+      render json: {errors: ["Invalid update"]}
     end
   end
 
@@ -27,6 +34,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password);
+    params.require(:user).permit(:username, :password, :money_in_cents);
   end
 end

@@ -38,7 +38,7 @@ module.exports = React.createClass({
       return <li className="project-list-item"
         key={project.id}
         onClick={this.handleClick.bind(this, project.id)}>
-        
+
         <img className="thumbnail"
           src={project.thumbnail_image_url}/>
 
@@ -51,9 +51,9 @@ module.exports = React.createClass({
           {projectElements}
         </ul>
 
-        <div className="new-project-link link" onClick={this.createNew}>
+        <button className="button" onClick={this.createNew}>
           Create New Project
-        </div>
+        </button>
       </div>
     );
   }
