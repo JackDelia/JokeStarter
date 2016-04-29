@@ -86,10 +86,7 @@ html, body {
   font-size: 25px;
   color: #321395;
 
-
 }
-
-
 
 .new-project-link {
   margin: 40px;
@@ -154,33 +151,35 @@ html, body {
   height: 100px;
 }
 
-.project-detail-container {
+#project-detail-container {
   display: flex;
   flex-direction: row;
   margin: 3%;
   width: 94%;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.project-title-body{
+#project-title-body{
   border: 5px solid #2bde73;
   padding: 20px;
   background-color: white;
-  width: 75%;
+  width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.project-detail-author {
-  font-size: 20px;
-  padding: 0;
-  margin-top: 0;
+#project-main-image {
+  width: 70%;
+  margin-left: 15%;
+  height: auto;
 }
 
-.reward-list {
+
+#reward-list {
   padding: 5px;
   padding-bottom: 0;
   margin-left: 5%;
@@ -270,6 +269,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 6%;
+  justify-content: space-between;
 }
 
 .project-form > input {
@@ -280,17 +280,16 @@ html, body {
 }
 
 .project-form > .button{
-  margin-top: 20px;
-  float: right;
-  background-color: white;
-  height: auto;
+  background-color: #2bde73;
+  color: white;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: 20px 10px 0 0;
+  font-size: 15px;
+  padding: 9px;
+  font-weight: normal;
   width: auto;
-  padding: 8px;
-  color: coral;
-  display: inline-block;
-  margin: 0 10px 0 0;
-  font-size: 18px;
-  margin-top: 2%;
+  height: auto;
 }
 
 .project-form > input::-webkit-input-placeholder {

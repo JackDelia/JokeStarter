@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    proj = params.require(:project).permit(:user_id, :title, :body, :goal, :thumbnail_image_url)
+    proj = params.require(:project).permit(:user_id, :title, :body, :goal, :thumbnail_image_url, :main_image_url)
     proj[:rewards] = params[:project][:rewards].values
 
     proj

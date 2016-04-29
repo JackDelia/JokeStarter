@@ -91,7 +91,7 @@ module.exports = React.createClass({
     }.bind(this));
 
     return (
-      <div className="project-detail-container">
+      <div id="project-detail-container">
         <Modal
           className="modal-confirm"
           overlayClassName="modal-confirm-overlay"
@@ -124,15 +124,17 @@ module.exports = React.createClass({
          <button className="button" onClick={this.closeErrorModal}>Close</button>
        </Modal>
 
-        <div className="project-title-body">
-          <h1 className="project-detail-title">{project.title}</h1>
+       <img id="project-main-image" src={project.main_image_url}/>
+       
+        <div id="project-title-body">
+          <h1 id="project-detail-title">{project.title}</h1>
           <h2 className="project-detail-author link"
             onClick={this.goToUser}>
             {UserStore.find(project.user_id).username}
           </h2>
           <article className="project-detail-body"><p>{project.body}</p></article>
         </div>
-        <ul className="reward-list">
+        <ul id="reward-list">
           <div className={rewardClasses}>
             ${project.funding} raised out of ${project.goal}
           </div>

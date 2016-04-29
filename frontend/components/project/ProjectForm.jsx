@@ -13,7 +13,8 @@ module.exports = React.createClass({
       title: "",
       body: "",
       goal: "",
-      imageUrl: "",
+      thumbnailImageUrl: "",
+      mainImageUrl: "",
       rewards: [],
       currentRewardVal: "",
       currentRewardBody: ""
@@ -33,7 +34,8 @@ module.exports = React.createClass({
       title: this.state.title,
       body: this.state.body,
       goal: this.state.goal,
-      thumbnail_image_url: this.state.imageUrl,
+      thumbnail_image_url: this.state.thumbnailImageUrl,
+      main_image_url: this.state.mainImageUrl,
       user_id: UserStore.currentUser().id,
       rewards: this.state.rewards
     };
@@ -75,7 +77,11 @@ module.exports = React.createClass({
 
           <input type="text"
             placeholder="Thumbnail Url"
-            valueLink={this.linkState("imageUrl")}/><br/>
+            valueLink={this.linkState("thumbnailImageUrl")}/><br/>
+
+          <input type="text"
+            placeholder="Main Image Url"
+            valueLink={this.linkState("mainImageUrl")}/><br/>
 
             <textarea
               rows="10" cols="40"
