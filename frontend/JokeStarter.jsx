@@ -47,7 +47,7 @@ var App = React.createClass({
 
 
 var routes = (
-  <Router history={hashHistory}>
+  <Router onUpdate={(): window.scrollTo(0, 0)} history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={ProjectIndex}/>
       <Route path="projects/:projectId" component={ProjectDetail}/>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:create, :show, :index, :update, :destroy] do
     resources :contributions, only: [:create, :index]
+    resources :comments, only: [:create, :index] 
   end
 
   resource :session, only: [:create, :show, :destroy]

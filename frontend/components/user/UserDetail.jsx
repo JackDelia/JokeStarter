@@ -17,7 +17,7 @@ module.exports = React.createClass({
 
   componentDidMount: function(){
     this.listener = UserStore.addListener(this.changed);
-    UserClientActions.fetchUsers();
+    UserClientActions.fetchSingleUser();
   },
 
   componentWillUnmount: function(){

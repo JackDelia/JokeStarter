@@ -13,7 +13,7 @@ JokeStarter is a web application inspired by Kickstarter to allow people to get 
 - [ ] Adequate seed data to demonstrate the site's features
 - [x] The minimally necessary features for a Kickstarter-inspired site: The ability to browse projects, project creation, and project contribution
 - [x] Hosting on Heroku
-- [ ] CSS styling that is satisfactorily visually appealing
+- [X] CSS styling that is satisfactorily visually appealing
 - [ ] A production README, replacing this README
 
 ## Product Goals and Priorities
@@ -109,9 +109,9 @@ user interface.
 
   **Objective:** Existing pages (including singup/signin) will look better.
 
-  - [ ] Make styling look more professional
-  - [ ] finalize layout
-  - [ ] focus on colors
+  - [X] Make styling look more professional
+  - [X] finalize layout
+  - [X] focus on colors
 
 ### Phase 7: Comments and Updates (1 day)
 
