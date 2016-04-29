@@ -38,10 +38,7 @@ module.exports = React.createClass({
 
     this.setState({username: "", password: ""});
 
-    UserClientActions.createUser({
-      username: this.state.username,
-      password: this.state.password
-    });
+    UserClientActions.createUser(this.state.username, this.state.password);
 
 
     this.setState({username: "", password: ""});

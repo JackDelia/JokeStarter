@@ -61,7 +61,6 @@ module.exports = {
   },
 
   alterMoney: function(amount, id){
-    debugger;
     $.ajax({
       method: "PATCH",
       url: "/users/"+id,

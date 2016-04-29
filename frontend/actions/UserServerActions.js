@@ -17,6 +17,7 @@ module.exports = {
   },
 
   receiveOneUser: function(user){
+    debugger;
     Dispatcher.dispatch({
       actionType: UserConstants.RECEIVE_ONE_USER,
       user: user

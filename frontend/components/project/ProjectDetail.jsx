@@ -38,9 +38,7 @@ module.exports = React.createClass({
         rewardAmount,
         UserStore.currentUser().id);
 
-        var changeAmount = UserStore.currentUser().money -(rewardAmount*100);
-
-        UserClientActions.alterMoney(changeAmount, UserStore.currentUser().id);
+        UserClientActions.alterMoney(-rewardAmount);
 
         this.setState({showConfirmationModal: false});
     }
@@ -125,7 +123,7 @@ module.exports = React.createClass({
        </Modal>
 
        <img id="project-main-image" src={project.main_image_url}/>
-       
+
         <div id="project-title-body">
           <h1 id="project-detail-title">{project.title}</h1>
           <h2 className="project-detail-author link"

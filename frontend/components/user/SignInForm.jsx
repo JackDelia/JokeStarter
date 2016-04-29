@@ -34,10 +34,7 @@ module.exports = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
 
-    UserClientActions.loginUser({
-      username: this.state.username,
-      password: this.state.password
-    });
+    UserClientActions.loginUser(this.state.username, this.state.password);
 
     this.setState({username: "", password: ""});
   },

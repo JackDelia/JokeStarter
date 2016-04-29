@@ -43,10 +43,8 @@ module.exports = React.createClass({
   addMoney: function(e){
     e.preventDefault();
 
-    var changeAmount = UserStore.currentUser().money + (this.state.moneyAmount*100);
-
     this.setState({addMoneyFormOpen: false});
-    UserClientActions.alterMoney(changeAmount, UserStore.currentUser().id);
+    UserClientActions.alterMoney(this.state.moneyAmount);
   },
 
   render: function(){
