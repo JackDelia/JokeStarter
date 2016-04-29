@@ -7,5 +7,6 @@ module.exports = {
   signOutUser: UserUtil.signOutUser,
   checkCurrentUser: UserUtil.checkCurrentUser,
   fetchUsers: UserUtil.fetchUsers,
-  fetchSingleUser: UserUtil.fetchSingleUser
+  fetchSingleUser: UserUtil.fetchSingleUser,
+  payMoney: UserUtil.payMoney
 };

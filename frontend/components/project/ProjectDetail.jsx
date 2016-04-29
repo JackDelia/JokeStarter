@@ -1,4 +1,5 @@
 var ProjectClientActions = require("../../actions/ProjectClientActions"),
+    UserClientActions = require("../../actions/UserClientActions"),
     UserStore = require("../../stores/UserStore"),
     ProjectStore = require("../../stores/ProjectStore"),
     React = require('react'),
@@ -29,12 +30,18 @@ module.exports = React.createClass({
   clickRewardConfirmed: function(rewardAmount){
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
+    else if (UserStore.currentUser().money < rewardAmount) {
+      this.setState({showConfirmationModal: false, showErrorModal: true});
+    }
     else {
       ProjectClientActions.contribute(this.props.params.projectId,
         rewardAmount,
         UserStore.currentUser().id);
+
+        UserClientActions.payMoney(rewardAmount, UserStore.currentUser().id);
+        
+        this.setState({showConfirmationModal: false});
     }
-    this.setState({showConfirmationModal: false});
 
   },
 
@@ -46,14 +53,26 @@ module.exports = React.createClass({
     this.setState({showConfirmationModal: false});
   },
 
+  closeErrorModal: function(reward){
+    this.setState({showErrorModal: false});
+  },
+
   goToUser: function(){
     hashHistory.push("/users/"+this.state.project.user_id);
+  },
+
+  goToCurrentUser: function(){
+    hashHistory.push("/users/"+UserStore.currentUser().id);
   },
 
   render: function(){
     var project = this.state.project;
     if(!project)
       return <div/>;
+
+    var rewardClasses = "reward-goal";
+    if(project.funding >= project.goal)
+      rewardClasses += " complete";
 
     var rewardElements = project.rewards.map(function(reward, idx){
       return(
@@ -94,6 +113,15 @@ module.exports = React.createClass({
           </div>
         </Modal>
 
+        <Modal
+          className="modal-confirm"
+          overlayClassName="modal-confirm-overlay"
+         isOpen={this.state.showErrorModal}>
+         <div className="error">Insufficient funds</div>
+         <div className="link" onClick={this.goToCurrentUser}>Click here to add more</div>
+         <button className="button" onClick={this.closeErrorModal}>Close</button>
+       </Modal>
+
         <div className="project-title-body">
           <h1 className="project-detail-title">{project.title}</h1>
           <h2 className="project-detail-author link"
@@ -103,7 +131,7 @@ module.exports = React.createClass({
           <article className="project-detail-body"><p>{project.body}</p></article>
         </div>
         <ul className="reward-list">
-          <div className="reward-goal">
+          <div className={rewardClasses}>
             ${project.funding} raised out of ${project.goal}
           </div>
           {rewardElements}

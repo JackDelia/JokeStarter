@@ -188,6 +188,10 @@
   align-items: center;
 }
 
+.complete {
+  background-color: lightgreen;
+}
+
 .modal-confirm {
   position: fixed;
   top: 20%;
