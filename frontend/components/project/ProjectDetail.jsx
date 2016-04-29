@@ -46,6 +46,10 @@ module.exports = React.createClass({
     this.setState({showConfirmationModal: false});
   },
 
+  goToUser: function(){
+    hashHistory.push("/users/"+this.state.project.user_id);
+  },
+
   render: function(){
     var project = this.state.project;
     if(!project)
@@ -92,7 +96,8 @@ module.exports = React.createClass({
 
         <div className="project-title-body">
           <h1 className="project-detail-title">{project.title}</h1>
-          <h2 className="project-detail-author">
+          <h2 className="project-detail-author link"
+            onClick={this.goToUser}>
             {UserStore.find(project.user_id).username}
           </h2>
           <article className="project-detail-body"><p>{project.body}</p></article>

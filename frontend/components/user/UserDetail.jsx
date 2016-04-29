@@ -12,7 +12,7 @@ module.exports = React.createClass({
 
   componentDidMount: function(){
     this.listener = UserStore.addListener(this.changed);
-    UserClientActions.fetchSingleUser(this.props.params.userId);
+    UserClientActions.fetchUsers();
   },
 
   componentWillUnmount: function(){
@@ -32,13 +32,14 @@ module.exports = React.createClass({
     if(!user)
       return <div/>;
 
+
     if(user.projects === undefined)
       user.projects = [];
 
     var userEditButton = "";
     var moneyElement = "";
     var addMoneyButton = "";
-    if(user.id === UserStore.currentUser().id){
+    if(UserStore.currentUser() && user.id === UserStore.currentUser().id){
       addMoneyButton = (
         <div className="link">Click Here To Add Money To Your Account</div>
       );

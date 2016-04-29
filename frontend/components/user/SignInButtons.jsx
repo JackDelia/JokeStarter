@@ -28,11 +28,16 @@ module.exports = React.createClass({
     hashHistory.push("signup");
   },
 
+  goToUser: function(){
+    hashHistory.push("/users/"+ this.state.currentUser.id);
+  },
+
   render: function(){
     var buttons;
     if(this.state.currentUser)
       buttons = (<div className="sign-in-buttons">
-      <div className="logged-in-message">
+      <div className="logged-in-message link"
+        onClick={this.goToUser}>
         Signed in as {this.state.currentUser.username}&nbsp;
       </div>
 

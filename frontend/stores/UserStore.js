@@ -10,8 +10,7 @@ var _user = null,
 
 function addUsers(users){
   for (var i = 0; i < users.length; i++) {
-    if(!_user.id === users[i].id)
-      _allUsers[users[i].id] = users[i];
+    _allUsers[users[i].id] = users[i];
   }
   UserStore.__emitChange();
 }
