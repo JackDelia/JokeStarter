@@ -17,6 +17,7 @@ function addUsers(users){
 
 function addOneUser(user) {
   _allUsers[user.id] = user;
+  UserStore.__emitChange();
 }
 
 UserStore.currentUser = function(){

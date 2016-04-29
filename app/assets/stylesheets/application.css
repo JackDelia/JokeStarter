@@ -54,6 +54,7 @@ html, body {
 
 .link {
   color: blue;
+  text-decoration: underline;
 }
 
 .link:hover {
@@ -114,10 +115,6 @@ html, body {
 
 .button:hover {
   cursor: pointer;
-}
-
-.button:focus {
-  outline: none
 }
 
 .index-and-link-container {

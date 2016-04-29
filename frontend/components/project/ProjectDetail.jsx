@@ -38,7 +38,7 @@ module.exports = React.createClass({
         rewardAmount,
         UserStore.currentUser().id);
 
-        var changeAmount = UserStore.currentUser().money -rewardAmount;
+        var changeAmount = UserStore.currentUser().money -(rewardAmount*100);
 
         UserClientActions.alterMoney(changeAmount, UserStore.currentUser().id);
 

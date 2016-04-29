@@ -10,6 +10,11 @@ module.exports = React.createClass({
     return({user: user, editFormOpen: false, addMoneyFormOpen: false, moneyAmount: ""});
   },
 
+  componentWillReceiveProps: function(newProps){
+    var user = UserStore.find(newProps.params.userId);
+    this.setState({user: user});
+  },
+
   componentDidMount: function(){
     this.listener = UserStore.addListener(this.changed);
     UserClientActions.fetchUsers();
@@ -38,7 +43,7 @@ module.exports = React.createClass({
   addMoney: function(e){
     e.preventDefault();
 
-    var changeAmount = UserStore.currentUser().money + this.state.moneyAmount;
+    var changeAmount = UserStore.currentUser().money + (this.state.moneyAmount*100);
 
     this.setState({addMoneyFormOpen: false});
     UserClientActions.alterMoney(changeAmount, UserStore.currentUser().id);
