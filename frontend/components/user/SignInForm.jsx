@@ -47,10 +47,7 @@ module.exports = React.createClass({
 
   guestSignIn: function(e){
     e.preventDefault();
-    UserClientActions.loginUser({
-      username: "Guest",
-      password: "gloriainexcelsiusdiscordia"
-    });
+    UserClientActions.loginUser("Guest", "gloriainexcelsiusdiscordia");
   },
 
   render: function(){
