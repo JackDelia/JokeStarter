@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by_id(params[:id])
-    @funding = get_funding(@project)
     if @project
       render :show
     else
@@ -38,14 +37,6 @@ class ProjectsController < ApplicationController
     proj[:rewards] = params[:project][:rewards].values
 
     proj
-  end
-
-  def get_funding(project)
-    sum = 0;
-    project.contributions.each do |contribution|
-      sum+= contribution.amount
-    end
-    sum
   end
 
 end

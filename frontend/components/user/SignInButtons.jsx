@@ -1,11 +1,16 @@
 var UserClientActions = require("../../actions/UserClientActions"),
     UserStore = require("../../stores/UserStore"),
     React = require('react'),
+    Modal = require('react-modal'),
+    SignInForm = require('./SignInForm'),
+    UserForm = require('./UserForm'),
     hashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
   getInitialState: function(){
-    return({currentUser: UserStore.currentUser()});
+    return({currentUser: UserStore.currentUser(),
+      signInOpen: false,
+      signUpOpen: false});
   },
   componentDidMount: function(){
     UserStore.addListener(this.changed);
@@ -21,11 +26,15 @@ module.exports = React.createClass({
   },
 
   signIn: function(){
-    hashHistory.push("signin");
+    this.setState({signInOpen: true});
   },
 
   signUp: function(){
-    hashHistory.push("signup");
+    this.setState({signUpOpen: true});
+  },
+
+  closeModals: function(){
+    this.setState({signInOpen: false, signUpOpen: false});
   },
 
   goToUser: function(){
@@ -35,7 +44,7 @@ module.exports = React.createClass({
   render: function(){
     var buttons;
     if(this.state.currentUser)
-      buttons = (<div className="sign-in-buttons">
+      buttons = (<div id="sign-in-buttons">
       <div className="logged-in-message link"
         onClick={this.goToUser}>
         Signed in as {this.state.currentUser.username}&nbsp;
@@ -46,7 +55,7 @@ module.exports = React.createClass({
         </div>);
     else
       buttons = (
-        <div className="sign-in-buttons">
+        <div id="sign-in-buttons">
           <button className="button"
             onClick={this.signIn}>Sign In</button>
 
@@ -55,6 +64,17 @@ module.exports = React.createClass({
         </div>
       );
 
-    return buttons;
+    return (
+      <div id="header">
+        {buttons}
+
+        <Modal className="modal-confirm" isOpen={this.state.signInOpen}>
+          <SignInForm callback={this.closeModals}/>
+        </Modal>
+
+        <Modal className="modal-confirm" isOpen={this.state.signUpOpen}>
+          <UserForm callback={this.closeModals}/>
+        </Modal>
+      </div>);
   }
 });

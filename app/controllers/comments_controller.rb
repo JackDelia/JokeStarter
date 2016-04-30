@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
+      @username = User.find_by_id(@comment.user_id).username
       render :show
     else
       render json: {errors: @comment.errors.full_messages}

@@ -26,9 +26,8 @@ module.exports = React.createClass({
 
   changed: function(){
 
-    if(UserStore.currentUser()){
-      hashHistory.push("/");
-    }
+    if(UserStore.currentUser())
+      this.props.callback();
 
     this.setState({errors: UserStore.getCurrentErrors()});
   },

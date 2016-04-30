@@ -23,8 +23,10 @@ function addOne(project){
 function addComment(comment) {
   var toComment = _projects[comment.projectId];
 
-  if(toComment.comments)
+  if(toComment.comments != undefined)
     toComment.comments.push(comment);
+
+  ProjectStore.__emitChange();
 }
 
 ProjectStore.all = function(){
@@ -48,6 +50,7 @@ ProjectStore.__onDispatch = function(payload){
       addAll(payload.projects);
       break;
     case ProjectConstants.RECEIVE_SINGLE_PROJECT:
+      debugger;
       addOne(payload.project);
       break;
     case ProjectConstants.RECEIVE_SINGLE_COMMENT:

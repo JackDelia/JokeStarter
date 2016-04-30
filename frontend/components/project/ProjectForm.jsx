@@ -21,11 +21,6 @@ module.exports = React.createClass({
     });
   },
 
-  componentDidMount: function(){
-    if(!UserStore.currentUser())
-      hashHistory.push("/");
-  },
-
   handleSubmit: function(e){
     e.preventDefault();
     if(!this.state.imageUrl)

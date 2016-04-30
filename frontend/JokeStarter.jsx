@@ -54,7 +54,7 @@ var routes = (
       <IndexRoute component={ProjectIndex}/>
       <Route path="projects/:projectId" component={ProjectDetail}>
         <IndexRoute component={ProjectDetailBase}/>
-        <Route path="/comments" component={ProjectComments}/>
+        <Route path="comments" component={ProjectComments}/>
       </Route>
       <Route path="signin" component={SignInForm}/>
       <Route path="signup" component={UserForm}/>
