@@ -49,6 +49,10 @@ module.exports = React.createClass({
       return <p className="error">{error}</p>;
     });
 
+    if(this.props.callback){
+      var closeButton = <button className="btn btn-default" onClick={this.props.callback}>Close</button>;
+    }
+
     return (
       <div className="user-form-panel">
         {errors}
@@ -64,8 +68,9 @@ module.exports = React.createClass({
             className="sign-in-field"
             valueLink={this.linkState("password")}/><br/>
 
-          <input type="submit" className="button" value="Sign Up!"/>
+          <input type="submit" className="btn btn-success" value="Sign Up!"/>
         </form>
+        {closeButton}
       </div>
 
     );

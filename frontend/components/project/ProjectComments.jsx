@@ -70,7 +70,7 @@ module.exports = React.createClass({
             className="input-area"
             value={this.commentBody}
             onChange={this.onCommentChange}/>
-          <input type="submit" value="Add Comment"/>
+          <input type="submit" className="btn" value="Add Comment"/>
         </form>
       </div>
     );

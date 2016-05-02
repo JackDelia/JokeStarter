@@ -63,23 +63,27 @@ module.exports = React.createClass({
     return (
       <form className="project-form" onSubmit={this.handleSubmit}>
         <input type="text"
+          className="text-input-field"
           placeholder="Project Title"
           valueLink={this.linkState("title")}/><br/>
 
           <input type="number" step="any"
+            className="text-input-field"
             placeholder="Funding Goal"
             valueLink={this.linkState("goal")}/><br/>
 
           <input type="text"
+            className="text-input-field"
             placeholder="Thumbnail Url"
             valueLink={this.linkState("thumbnailImageUrl")}/><br/>
 
           <input type="text"
             placeholder="Main Image Url"
+            className="text-input-field"
             valueLink={this.linkState("mainImageUrl")}/><br/>
 
             <textarea
-              rows="10" cols="40"
+              rows="4" cols="40"
               className="input-area"
               placeholder="Talk About Your Project Here!"
               valueLink={this.linkState("body")}/><br/>
@@ -91,18 +95,19 @@ module.exports = React.createClass({
 
 
           <input type="number" step="any"
+            className="text-input-field"
             placeholder="Reward Amount"
             valueLink={this.linkState("currentRewardVal")}/><br/>
 
-          <textarea rows="5" cols="40"
+          <textarea rows="3" cols="40"
             className="input-area"
             placeholder="Reward Text"
             valueLink={this.linkState("currentRewardBody")}/>
 
-      <button className="button" onClick={this.addReward}>Add Reward</button><br/>
+      <button className="btn btn-success" onClick={this.addReward}>Add Reward</button><br/>
 
 
-      <input type="submit" className="button" value="Create Project!"/>
+      <input type="submit" className="btn btn-success" value="Create Project!"/>
       </form>
     );
   }

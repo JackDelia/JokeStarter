@@ -47,6 +47,8 @@ module.exports = React.createClass({
     e.preventDefault();
 
     hashHistory.push("/signup");
+    if(this.props.callback)
+      this.props.callback();
   },
 
   guestSignIn: function(e){
@@ -58,6 +60,10 @@ module.exports = React.createClass({
     var errors = UserStore.getCurrentErrors().map(function(error){
       return <p className="error">{error}</p>;
     });
+
+    if(this.props.callback){
+      var closeButton = <button className="btn btn-default" onClick={this.props.callback}>Close</button>;
+    }
 
     return (
       <div className="user-form-panel">
@@ -74,7 +80,7 @@ module.exports = React.createClass({
               placeholder="Password"
               valueLink={this.linkState("password")}/><br/>
 
-            <input type="submit" className="button" value="Sign In!"/>
+            <input type="submit" className="btn btn-success" value="Sign In!"/>
         </form>
 
         <div className="link"
@@ -83,6 +89,7 @@ module.exports = React.createClass({
         <div className="link"
           onClick={this.guestSignIn}>Or click here to sign in as a guest!
         </div>
+        {closeButton}
       </div>
 
     );

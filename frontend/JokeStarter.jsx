@@ -23,7 +23,6 @@ var UserForm = require('./components/user/UserForm'),
     hashHistory = ReactRouter.hashHistory;
 
 
-
 var App = React.createClass({
 
   componentDidMount: function(){

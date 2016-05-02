@@ -44,35 +44,34 @@ module.exports = React.createClass({
   render: function(){
     var buttons;
     if(this.state.currentUser)
-      buttons = (<div id="sign-in-buttons">
-      <div className="logged-in-message link"
-        onClick={this.goToUser}>
-        Signed in as {this.state.currentUser.username}&nbsp;
-      </div>
+      buttons = (<nav className="navbar navbar-default navbar-fixed-top">
+        <a href={"#/users/"+this.state.currentUser.id} className="right-nav">
+          Signed in as {this.state.currentUser.username}
+        </a>
 
-        <button className="button"
-          onClick={this.signOut}>Sign Out</button>
-        </div>);
+          <button className="btn btn-default navbar-btn right-nav"
+            onClick={this.signOut}>Sign Out</button>
+      </nav>);
     else
       buttons = (
-        <div id="sign-in-buttons">
-          <button className="button"
+        <nav className="navbar navbar-default navbar-fixed-top">
+          <button className="btn btn-default navbar-btn right-nav"
             onClick={this.signIn}>Sign In</button>
 
-          <button className="button"
+          <button className="btn btn-default navbar-btn right-nav"
             onClick={this.signUp}>Sign Up</button>
-        </div>
+        </nav>
       );
 
     return (
       <div id="header">
         {buttons}
 
-        <Modal className="modal-confirm" isOpen={this.state.signInOpen}>
+        <Modal className="modal-signin" isOpen={this.state.signInOpen}>
           <SignInForm callback={this.closeModals}/>
         </Modal>
 
-        <Modal className="modal-confirm" isOpen={this.state.signUpOpen}>
+        <Modal className="modal-signin" isOpen={this.state.signUpOpen}>
           <UserForm callback={this.closeModals}/>
         </Modal>
       </div>);

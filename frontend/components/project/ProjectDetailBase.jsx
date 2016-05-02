@@ -101,12 +101,12 @@ module.exports = React.createClass({
           </div>
           <div className="modal-buttons">
             <button
-              className="button"
+              className="btn btn-default"
               onClick={this.clickRewardConfirmed.bind(this, this.state.selectedReward[0])}>
               Yes
             </button>
             <button
-              className="button"
+              className="btn btn-default"
               onClick={this.closeModal}>
               No
             </button>
@@ -119,15 +119,15 @@ module.exports = React.createClass({
          isOpen={this.state.showErrorModal}>
          <div className="error">Insufficient funds</div>
          <div className="link" onClick={this.goToCurrentUser}>Click here to add more</div>
-         <button className="button" onClick={this.closeErrorModal}>Close</button>
+         <button className="btn btn-default" onClick={this.closeErrorModal}>Close</button>
        </Modal>
 
         <div id="project-title-body">
           <h1 id="project-detail-title">{project.title}</h1>
-          <h2 className="project-detail-author link"
-            onClick={this.goToUser}>
+          <a className="project-detail-author"
+            href={"#/users/"+author.id}>
             {author.username}
-          </h2>
+          </a>
           <article className="project-detail-body"><p>{project.body}</p></article>
         </div>
         <ul id="reward-list">
