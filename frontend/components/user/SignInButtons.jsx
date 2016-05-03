@@ -3,6 +3,7 @@ var UserClientActions = require("../../actions/UserClientActions"),
     React = require('react'),
     Modal = require('react-modal'),
     SignInForm = require('./SignInForm'),
+    SearchBar = require('../project/SearchBar'),
     UserForm = require('./UserForm'),
     hashHistory = require('react-router').hashHistory;
 
@@ -51,6 +52,7 @@ module.exports = React.createClass({
 
           <button className="btn btn-default navbar-btn right-nav"
             onClick={this.signOut}>Sign Out</button>
+          <SearchBar/>
       </nav>);
     else
       buttons = (
@@ -60,11 +62,13 @@ module.exports = React.createClass({
 
           <button className="btn btn-default navbar-btn right-nav"
             onClick={this.signUp}>Sign Up</button>
+          <SearchBar/>
         </nav>
       );
 
     return (
       <div id="header">
+
         {buttons}
 
         <Modal className="modal-signin" isOpen={this.state.signInOpen}>

@@ -43,8 +43,12 @@ module.exports = React.createClass({
   addMoney: function(e){
     e.preventDefault();
 
-    this.setState({addMoneyFormOpen: false});
+    this.setState({addMoneyFormOpen: false, moneyAmount: ""});
     UserClientActions.alterMoney(this.state.moneyAmount);
+  },
+
+  closeModal: function(){
+    this.setState({addMoneyFormOpen: false, moneyAmount: ""});
   },
 
   render: function(){
@@ -109,12 +113,14 @@ module.exports = React.createClass({
         className="modal-confirm">
         <form id="money-form" onSubmit={this.addMoney}>
           <input type="number"
+            className="text-input-field"
             step="any"
             placeholder="Enter Amount Here"
             value={this.state.moneyAmount}
             onChange={this.updateMoneyField}/>
-          <input type="submit" value ="Add Money!" className="button"/>
+          <input type="submit" value ="Add Money!" className="btn btn-default"/>
         </form>
+        <button className="btn btn-default" onClick={this.closeModal}>Cancel</button>
       </Modal>
       </div>
     );

@@ -51,7 +51,9 @@ module.exports = React.createClass({
           {projectElements}
         </ul>
 
-        <button className="btn btn-success" onClick={this.createNew}>
+        <button className="btn btn-success"
+          id="new-project-button" 
+          onClick={this.createNew}>
           Create New Project
         </button>
       </div>

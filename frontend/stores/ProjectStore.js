@@ -44,6 +44,16 @@ ProjectStore.find = function(id){
   return _projects[id];
 };
 
+ProjectStore.search = function(searchString) {
+  var projectsArray = Object.keys(_projects).map(function(key){
+    return _projects[key];
+  });
+  return projectsArray.filter(function(project){
+    var title = project.title;
+    return (title.indexOf(searchString) > -1);
+  });
+};
+
 ProjectStore.__onDispatch = function(payload){
   switch (payload.actionType) {
     case ProjectConstants.RECEIVE_PROJECTS:
