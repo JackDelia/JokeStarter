@@ -10,6 +10,7 @@ module.exports = React.createClass({
   },
 
   onSearchUpadate: function(e){
+    ProjectClientActions.fetchProjects();
     this.setState({searchString: e.target.value}, function(){
       var projects = ProjectStore.search(this.state.searchString);
       this.setState({projects: projects});
@@ -20,7 +21,7 @@ module.exports = React.createClass({
   render: function(){
     var searchResults = this.state.projects.map(function(project){
       return (
-        <li key={project.id}>{project.title}</li>
+        <li key={project.id}><a href={"#/projects/"+project.id}>{project.title}</a></li>
       );
     });
 
