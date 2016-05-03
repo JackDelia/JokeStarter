@@ -50,7 +50,6 @@ ProjectStore.__onDispatch = function(payload){
       addAll(payload.projects);
       break;
     case ProjectConstants.RECEIVE_SINGLE_PROJECT:
-      debugger;
       addOne(payload.project);
       break;
     case ProjectConstants.RECEIVE_SINGLE_COMMENT:

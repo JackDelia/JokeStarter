@@ -170,6 +170,8 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 10%;
+  margin-top: 10%;
 }
 
 .project-list-item:hover {
@@ -192,6 +194,22 @@ html, body {
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.project-navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.project-link {
+  margin-right: 10%;
+}
+
+#project-detail-author {
+  font-size: 22px;
+  margin-bottom: 3%;
 }
 
 #project-title-body{
@@ -378,4 +396,12 @@ html, body {
   font-size: 15px;
   border: 2px solid grey;
   border-radius: 5px;
+}
+
+#project-comments-container {
+  width: 80%;
+}
+
+#comment-input-area {
+  width: 100%;
 }

@@ -124,7 +124,7 @@ module.exports = React.createClass({
 
         <div id="project-title-body">
           <h1 id="project-detail-title">{project.title}</h1>
-          <a className="project-detail-author"
+          <a id="project-detail-author"
             href={"#/users/"+author.id}>
             {author.username}
           </a>

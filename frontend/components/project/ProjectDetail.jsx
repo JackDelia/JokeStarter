@@ -42,14 +42,17 @@ module.exports = React.createClass({
        <img id="project-main-image"
          src={project.main_image_url}
          onClick={this.goToDetailBase}/>
+       <nav className="navbar navbar-default project-navbar">
+         <ul className="nav navbar-nav project-navbar">
+           <li className="link project-link" onClick={this.goToDetailBase}>
+             Project Main Page
+           </li>
 
-       <div className="link" onClick={this.goToDetailBase}>
-         Project Main Page
-       </div>
-
-       <div className="link"onClick={this.goToComments}>
-         Comments
-       </div>
+           <li className="link project-link"onClick={this.goToComments}>
+             Comments
+           </li>
+         </ul>
+       </nav>
 
        {this.props.children}
       </div>

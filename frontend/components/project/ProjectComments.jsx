@@ -38,6 +38,7 @@ module.exports = React.createClass({
     );
 
     this.setState({commentBody: ""});
+
   },
 
   onCommentChange: function(e){
@@ -50,11 +51,11 @@ module.exports = React.createClass({
       return <div/>;
     var comments = project.comments.map(function(comment){
       return (<li key={comment.id} className="commentContainer">
-        <p className="comment">{comment.body}</p>
         <div className="link"
-          onClick={this.goToUser.bind(this, comment.userId)}>
+          onClick={this.goToUser.bind(this, comment.user_id)}>
           {UserStore.find(comment.user_id).username}
         </div>
+        <p className="comment">{comment.body}</p>
         </li>);
     }.bind(this));
 
@@ -65,11 +66,12 @@ module.exports = React.createClass({
         </ul>
 
         <form id="comment-form" onSubmit={this.addComment}>
-          <textarea rows="5" cols="40"
+          <textarea rows="3" cols="40"
             placeholder="Write comment here"
             className="input-area"
+            id="comment-input-area"
             value={this.commentBody}
-            onChange={this.onCommentChange}/>
+            onChange={this.onCommentChange}/><br/>
           <input type="submit" className="btn" value="Add Comment"/>
         </form>
       </div>
