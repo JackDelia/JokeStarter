@@ -52,7 +52,7 @@ module.exports = React.createClass({
         </ul>
 
         <button className="btn btn-success"
-          id="new-project-button" 
+          id="new-project-button"
           onClick={this.createNew}>
           Create New Project
         </button>

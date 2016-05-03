@@ -5,18 +5,25 @@ var Store = require("flux/utils").Store,
 var ProjectStore = new Store(Dispatcher);
 
 var _projects = {};
+var _currentProjectId = -1;
 
 function addAll(projects){
-  _projects = {};
+  if(_currentProjectId !== -1){
+    var current = _projects[_currentProjectId];
+    _projects = {};
+    _projects[_currentProjectId] = current;
+  }
 
   projects.forEach(function(project){
-    _projects[project.id] = project;
+    if(!(project.id === _currentProjectId))
+      _projects[project.id] = project;
   });
   ProjectStore.__emitChange();
 }
 
 function addOne(project){
   _projects[project.id] = project;
+  _currentProjectId = project.id;
   ProjectStore.__emitChange();
 }
 
@@ -53,7 +60,7 @@ ProjectStore.search = function(searchString) {
   });
   return projectsArray.filter(function(project){
     var title = project.title;
-    return (title.indexOf(searchString) > -1);
+    return ((title.toLowerCase()).indexOf(searchString.toLowerCase()) > -1);
   });
 };
 

@@ -23,6 +23,12 @@ module.exports = React.createClass({
     clearInterval(this.countdown);
   },
 
+  componentWillReceiveProps: function(newProps){
+    var project = ProjectStore.find(newProps.params.projectId);
+    this.setState({project: project},
+    ProjectClientActions.fetchSingleProject.bind(null, newProps.params.projectId));
+  },
+
   changed: function(){
     this.setState({project: ProjectStore.find(this.props.params.projectId)});
     var timeRemaining = 259200 + this.state.project.age;
