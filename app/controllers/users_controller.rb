@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.includes(:projects)
     render :index
   end
 

@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    render json: Project.all
+    render json: Project.includes(:contributions)
   end
 
   def show

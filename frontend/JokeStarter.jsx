@@ -7,6 +7,7 @@ var UserForm = require('./components/user/UserForm'),
     ProjectForm = require('./components/project/ProjectForm'),
     ProjectDetailBase = require('./components/project/ProjectDetailBase'),
     ProjectComments = require('./components/project/ProjectComments'),
+    ProjectUpdates = require('./components/project/ProjectUpdates'),
 
     UserUtil = require("./util/UserUtil"),
     ProjectUtil = require("./util/ProjectUtil"),
@@ -56,6 +57,7 @@ var routes = (
       <Route path="projects/:projectId" component={ProjectDetail}>
         <IndexRoute component={ProjectDetailBase}/>
         <Route path="comments" component={ProjectComments}/>
+        <Route path="updates" component={ProjectUpdates}/>
       </Route>
       <Route path="signin" component={SignInForm}/>
       <Route path="signup" component={UserForm}/>

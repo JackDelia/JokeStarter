@@ -22,6 +22,13 @@ module.exports = {
       actionType: ProjectConstants.RECEIVE_SINGLE_COMMENT,
       comment: comment
     });
+  },
+
+  receiveOneUpdate: function(update){
+    Dispatcher.dispatch({
+      actionType: ProjectConstants.RECEIVE_SINGLE_UPDATE,
+      update: update
+    });
   }
 
 };

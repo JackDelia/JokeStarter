@@ -36,6 +36,15 @@ function addComment(comment) {
   ProjectStore.__emitChange();
 }
 
+function addUpdate(update) {
+  var toUpdate = _projects[update.project_id];
+
+  if(toUpdate.updates !== undefined)
+    toUpdate.updates.push(update);
+
+  ProjectStore.__emitChange();
+}
+
 ProjectStore.all = function(){
   var projectsArray = [];
 
@@ -74,6 +83,9 @@ ProjectStore.__onDispatch = function(payload){
       break;
     case ProjectConstants.RECEIVE_SINGLE_COMMENT:
       addComment(payload.comment);
+      break;
+    case ProjectConstants.RECEIVE_SINGLE_UPDATE:
+      addUpdate(payload.update);
       break;
 
   }

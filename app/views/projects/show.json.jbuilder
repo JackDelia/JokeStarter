@@ -8,5 +8,6 @@ funding = 0
 end
 
 json.comments @project.comments, :body, :id, :user_id
+json.updates @project.updates, :body, :id, :project_id
 
 json.funding funding

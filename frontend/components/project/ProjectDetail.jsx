@@ -43,6 +43,10 @@ module.exports = React.createClass({
     hashHistory.push("/projects/"+this.props.params.projectId + "/comments");
   },
 
+  goToUpdates: function(){
+    hashHistory.push("/projects/"+this.props.params.projectId + "/updates");
+  },
+
   render: function(){
     var project = this.state.project;
     if(!project)
@@ -86,6 +90,10 @@ module.exports = React.createClass({
 
            <li className="link project-link"onClick={this.goToComments}>
              Comments
+           </li>
+
+           <li className="link project-link"onClick={this.goToUpdates}>
+             Updates
            </li>
          </ul>
        </nav>

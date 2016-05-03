@@ -70,7 +70,7 @@ module.exports = React.createClass({
             placeholder="Write comment here"
             className="input-area"
             id="comment-input-area"
-            value={this.commentBody}
+            value={this.state.commentBody}
             onChange={this.onCommentChange}/><br/>
           <input type="submit" className="btn" value="Add Comment"/>
         </form>

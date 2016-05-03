@@ -54,5 +54,15 @@ module.exports = {
       data: {comment: params},
       success: ProjectServerActions.receiveOneComment
     });
-  }
+  },
+
+  addUpdate: function(projectId, params){
+    $.ajax({
+      method: "POST",
+      url: "/projects/"+projectId+"/updates",
+      dataType: "json",
+      data: {update: params},
+      success: ProjectServerActions.receiveOneUpdate
+    });
+  },
 };

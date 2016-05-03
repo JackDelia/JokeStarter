@@ -87,11 +87,38 @@ html, body {
 }
 
 .left-nav {
-  margin-right: 53%;
+  margin-right: 43%;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 #searchbar {
   width: 100%;
+  margin-top: 15px;
+}
+
+#search-results {
+  overflow-y: visible;
+  background-color: white;
+  width: 100%;
+  padding-left: 0;
+}
+
+.search-result {
+  border: 1px solid grey;
+  margin-left: 0;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+.search-result:hover {
+  background-color: lightblue;
+  cursor: pointer;
+  color: white;
 }
 
 .user-form-panel {

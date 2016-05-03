@@ -15,5 +15,16 @@ module.exports = {
     };
 
     ProjectUtil.addComment(projectId, params);
+  },
+
+  addUpdate: function(projectId, body){
+
+    var params = {
+      project_id: projectId,
+      body: body
+    };
+
+    ProjectUtil.addUpdate(projectId, params);
   }
+
 };

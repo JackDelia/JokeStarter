@@ -21,19 +21,27 @@ module.exports = React.createClass({
   render: function(){
     var searchResults = this.state.projects.map(function(project){
       return (
-        <li key={project.id}><a href={"#/projects/"+project.id}>{project.title}</a></li>
+        <li key={project.id}
+          className="search-result"
+          onClick={function()
+            {
+              hashHistory.push("/projects/" + project.id);
+              this.setState({searchString: "", projects: []});
+          }.bind(this)}>
+            {project.title}
+        </li>
       );
-    });
+    }.bind(this));
 
     return (
-      <div className="left-nav">
+      <div className="left-nav" id="searchbar-container">
         <input type="text"
           id="searchbar"
           className="text-input-field"
           placeholder="Search"
           value={this.state.searchString}
           onChange={this.onSearchUpadate}/>
-        <ul>
+        <ul id="search-results">
           {searchResults}
         </ul>
     </div>);
