@@ -27,11 +27,11 @@ module.exports = React.createClass({
   },
 
   signIn: function(){
-    this.setState({signInOpen: true});
+    this.setState({signInOpen: true, signUpOpen: false});
   },
 
   signUp: function(){
-    this.setState({signUpOpen: true});
+    this.setState({signUpOpen: true, signInOpen: false});
   },
 
   closeModals: function(){
@@ -58,9 +58,11 @@ module.exports = React.createClass({
       buttons = (
         <nav className="navbar navbar-default navbar-fixed-top">
           <button className="btn btn-default navbar-btn right-nav"
+            disabled={this.state.signInOpen}
             onClick={this.signIn}>Sign In</button>
 
           <button className="btn btn-default navbar-btn right-nav"
+            disabled={this.state.signUpOpen}
             onClick={this.signUp}>Sign Up</button>
           <SearchBar/>
         </nav>
@@ -72,7 +74,7 @@ module.exports = React.createClass({
         {buttons}
 
         <Modal className="modal-signin" isOpen={this.state.signInOpen}>
-          <SignInForm callback={this.closeModals}/>
+          <SignInForm callback={this.closeModals} signUpCallback={this.signUp}/>
         </Modal>
 
         <Modal className="modal-signin" isOpen={this.state.signUpOpen}>

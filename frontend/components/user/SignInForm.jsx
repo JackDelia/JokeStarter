@@ -46,9 +46,12 @@ module.exports = React.createClass({
   signUp: function(e){
     e.preventDefault();
 
-    hashHistory.push("/signup");
-    if(this.props.callback)
+    if(this.props.callback){
       this.props.callback();
+      this.props.signUpCallback();
+    }
+    else
+      hashHistory.push("/signup");
   },
 
   guestSignIn: function(e){

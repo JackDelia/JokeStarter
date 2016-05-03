@@ -60,7 +60,6 @@ module.exports = React.createClass({
     if(user.projects === undefined)
       user.projects = [];
 
-    var userEditButton = "";
     var moneyElement = "";
     var addMoneyButton = "";
     if(UserStore.currentUser() && user.id === UserStore.currentUser().id){
@@ -69,10 +68,6 @@ module.exports = React.createClass({
           onClick={this.openMoneyModal}>
           Click Here To Add Money To Your Account
         </div>
-      );
-
-      userEditButton = (
-        <div className="link">Click Here To Edit Account</div>
       );
 
       var moneyString = user.money;
@@ -107,9 +102,9 @@ module.exports = React.createClass({
 
         {moneyElement}
         {addMoneyButton}
-        {userEditButton}
 
       <Modal isOpen={this.state.addMoneyFormOpen}
+        onRequestClose={this.closeModals}
         className="modal-confirm">
         <form id="money-form" onSubmit={this.addMoney}>
           <input type="number"

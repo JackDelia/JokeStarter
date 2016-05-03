@@ -11,6 +11,7 @@ module.exports = React.createClass({
     return {
       username: "",
       password: "",
+      password2: "",
       errors: UserStore.getCurrentErrors()
       };
   },
@@ -53,6 +54,13 @@ module.exports = React.createClass({
       var closeButton = <button className="btn btn-default" onClick={this.props.callback}>Close</button>;
     }
 
+    var disabled = false;
+    var passwordErrors = <div/>;
+    if(this.state.password !== this.state.password2){
+      passwordErrors = <div className="error">Passwords Do not Match</div>;
+      disabled = true;
+    }
+
     return (
       <div className="user-form-panel">
         {errors}
@@ -63,12 +71,21 @@ module.exports = React.createClass({
             className="sign-in-field"
             valueLink={this.linkState("username")}/><br/>
 
+          {passwordErrors}<br/>
           <input type="password"
             placeholder="Password"
             className="sign-in-field"
             valueLink={this.linkState("password")}/><br/>
 
-          <input type="submit" className="btn btn-success" value="Sign Up!"/>
+          <input type="password"
+            placeholder="Retype Password"
+            className="sign-in-field"
+            valueLink={this.linkState("password2")}/><br/>
+
+          <input type="submit"
+            className="btn btn-success"
+            value="Sign Up!"
+            disabled={disabled}/>
         </form>
         {closeButton}
       </div>

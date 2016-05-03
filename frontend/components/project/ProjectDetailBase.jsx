@@ -93,7 +93,8 @@ module.exports = React.createClass({
         <Modal
           className="modal-confirm"
           overlayClassName="modal-confirm-overlay"
-         isOpen={this.state.showConfirmationModal}>
+         isOpen={this.state.showConfirmationModal}
+         onRequestClose={this.closeModal}>
          <div classname="confirm-selection-modal">Confirm!</div><br/>
           <div>Are you sure you want to buy the reward:</div><br/>
           <div>
@@ -116,7 +117,8 @@ module.exports = React.createClass({
         <Modal
           className="modal-confirm"
           overlayClassName="modal-confirm-overlay"
-         isOpen={this.state.showErrorModal}>
+         isOpen={this.state.showErrorModal}
+         onRequestClose={this.closeErrorModal}>
          <div className="error">Insufficient funds</div>
          <div className="link" onClick={this.goToCurrentUser}>Click here to add more</div>
          <button className="btn btn-default" onClick={this.closeErrorModal}>Close</button>
