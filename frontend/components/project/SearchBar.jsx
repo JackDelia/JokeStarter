@@ -10,9 +10,11 @@ module.exports = React.createClass({
   },
 
   onSearchUpadate: function(e){
-    this.setState({searchString: e.target.value});
-    var projects = ProjectStore.search(this.state.searchString);
-    this.setState({projects: projects});
+    this.setState({searchString: e.target.value}, function(){
+      var projects = ProjectStore.search(this.state.searchString);
+      this.setState({projects: projects});
+
+    }.bind(this));
   },
 
   render: function(){

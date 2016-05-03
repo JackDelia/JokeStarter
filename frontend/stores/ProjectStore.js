@@ -45,6 +45,9 @@ ProjectStore.find = function(id){
 };
 
 ProjectStore.search = function(searchString) {
+  if(searchString.length === 0)
+    return [];
+
   var projectsArray = Object.keys(_projects).map(function(key){
     return _projects[key];
   });
