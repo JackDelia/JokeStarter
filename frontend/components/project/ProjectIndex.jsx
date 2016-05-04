@@ -42,7 +42,7 @@ module.exports = React.createClass({
         <img className="thumbnail"
           src={project.thumbnail_image_url}/>
 
-        {project.title}</li>;
+        <div className="thumbnail-title">{project.title}</div></li>;
     }.bind(this));
 
     return (

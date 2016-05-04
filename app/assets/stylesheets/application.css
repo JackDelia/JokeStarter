@@ -36,8 +36,9 @@ html, body {
  }
 
  .update {
-   font-size: 30px;
+   font-size: 20px;
    padding: 5%;
+   white-space: pre-wrap;
  }
 
 .main {
@@ -231,6 +232,11 @@ html, body {
   cursor: pointer;
 }
 
+.thumbnail-title {
+  padding: 7px;
+  text-align: center;
+}
+
 .thumbnail {
   width: 100%;
   display: inline-block;
@@ -280,6 +286,11 @@ html, body {
 #project-detail-author {
   font-size: 22px;
   margin-bottom: 3%;
+}
+
+.project-detail-body > p{
+  white-space: pre-wrap;
+  font-size: 20px;
 }
 
 #project-title-body{
