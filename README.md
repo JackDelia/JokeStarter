@@ -117,10 +117,10 @@ user interface.
 
 **Objective:** Allow Commenting on projects, and allow creators to post updates about projects.
 
-- [ ] create `Comment` model
-- [ ] create `Update` model
-- [ ]  build out API, Flux loop, and components for Comment/update CRUD
-- [ ] Use CSS to style new views
+- [X] create `Comment` model
+- [X] create `Update` model
+- [X]  build out API, Flux loop, and components for Comment/update CRUD
+- [X] Use CSS to style new views
 
 
 ### Phase 8: Tags (1.5 days)
@@ -140,10 +140,10 @@ user interface.
 
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [X] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Set timers/countdowns for Projects
+- [X] Set timers/countdowns for Projects
 - [ ] Allow People to like projects
-- [ ] Allow Users to follow projects
+- [X] Allow Users to follow projects
 - [ ] Multiple sessions
