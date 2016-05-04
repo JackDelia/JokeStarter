@@ -43,6 +43,22 @@ html, body {
    border-bottom: 3px solid grey;
  }
 
+ .update-title {
+   padding-bottom: 0;
+   margin-bottom: 0;
+   font-size: 25px;
+   padding: 5%;
+   font-weight: bold;
+   text-align: center;
+ }
+
+#update-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5%;
+}
+
 .main {
   background-image: url("https://static.pexels.com/photos/6241/sky-sunset-red-romantic.jpg");
   background-color: white;
@@ -53,7 +69,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -431,6 +447,7 @@ html, body {
   width: 60%;
   padding: 2%;
   display: flex;
+  background-color: white;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -503,4 +520,8 @@ html, body {
 
 #money-form > .text-input-field {
   width: 80%;
+}
+
+#project-update-list {
+  padding-left: 0;
 }

@@ -17,10 +17,11 @@ module.exports = {
     ProjectUtil.addComment(projectId, params);
   },
 
-  addUpdate: function(projectId, body){
+  addUpdate: function(projectId, title, body){
 
     var params = {
       project_id: projectId,
+      title: title,
       body: body
     };
 

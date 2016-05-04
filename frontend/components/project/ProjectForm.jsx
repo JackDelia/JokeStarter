@@ -107,7 +107,7 @@ module.exports = React.createClass({
             placeholder="Reward Text"
             valueLink={this.linkState("currentRewardBody")}/>
 
-      <button className="btn btn-success" onClick={this.addReward}>Add Reward</button><br/>
+          <button className="btn btn-default" onClick={this.addReward}>Add Reward</button><br/>
 
 
       <input type="submit" className="btn btn-success" value="Create Project!"/>

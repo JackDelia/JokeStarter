@@ -51,9 +51,8 @@ It might not be that good. It's my first potato salad.",
 
 Contribution.create(project_id: 1, user_id: potato_master.id, amount: 55492)
 
-Update.create(project_id: 1, body: "UPDATE: WE DID IT
-
-Stretch Goals:
+Update.create(project_id: 1, title: "UPDATE: WE DID IT",
+body: "Stretch Goals:
 
 $35 - I will make 4x as much Potato Salad. I know $40 isn't 4x $10, but you guys have earned it.
 
@@ -62,16 +61,14 @@ $75 - Pizza Party!
 $100 - I will try two different Potato Salad recipes.")
 
 
-Update.create(project_id: 1, body: "UPDATE #2: ALL THE POTATO THAT'S FIT TO PRINT
-
-We made the news. Let's keep up the good work! New stretch goals coming soon!
+Update.create(project_id: 1, title: "UPDATE #2: ALL THE POTATO THAT'S FIT TO PRINT",
+body: "We made the news. Let's keep up the good work! New stretch goals coming soon!
 
 http://www.cnet.com/news/guys-kickstarter-dream-making-potato-salad-possibly-with-dill/")
 
 
-Update.create(project_id: 1, body: "UPDATE #3: WOW YOU GUYS
-
-We're making a lot of great progress. I think it's time for us to think about getting hats made. I added a new donor level for people who want hats. For those who are interested the hats could look like this: http://www.zazzle.com/i_love_potato_salad_mesh_hat-148005376484063142
+Update.create(project_id: 1, title: "UPDATE #3: WOW YOU GUYS",
+body: "We're making a lot of great progress. I think it's time for us to think about getting hats made. I added a new donor level for people who want hats. For those who are interested the hats could look like this: http://www.zazzle.com/i_love_potato_salad_mesh_hat-148005376484063142
 
 Stretch goals:
 
@@ -81,21 +78,18 @@ $300 - Call a chef to get a better recipe
 
 $350 - Make way more potato salad and probably do a third recipe.")
 
-Update.create(project_id: 1, body: "WE MADE THE NEWS!
+Update.create(project_id: 1, title: "WE MADE THE NEWS!",
+body: "http://www.abc6onyourside.com/news/features/top-stories/stories/mans-potato-salad-plea-takes-off-kickstarter-33010.shtml")
 
-http://www.abc6onyourside.com/news/features/top-stories/stories/mans-potato-salad-plea-takes-off-kickstarter-33010.shtml")
 
-
-Update.create(project_id: 1, body: "NEW STRETCH GOALS:
-
-$1000: I'll do a live stream of the potato salad making
+Update.create(project_id: 1, title: "NEW STRETCH GOALS:",
+body: "$1000: I'll do a live stream of the potato salad making
 
 $1200: I'll pay someone to film a thank-you video for all of my backers!")
 
 
-Update.create(project_id: 1, body: "A BIG STRETCH GOAL:
-
-We're really tearing through these stretch goals. I honestly don't know what is realistic anymore. So, I thought maybe we try to double the current number?
+Update.create(project_id: 1, title: "A BIG STRETCH GOAL:",
+body: "We're really tearing through these stretch goals. I honestly don't know what is realistic anymore. So, I thought maybe we try to double the current number?
 
 $3000: My kitchen is too small! I will rent out a party hall and invite the whole internet to the potato salad party (only $10 and above will be allowed in the kitchen)! The internet loves potato salad! Let's show them that potato salad loves the internet!!")
 
@@ -140,48 +134,40 @@ Solutions:
 
 Contribution.create(project_id: 2, user_id: 1, amount: 4400)
 
-Update.create(project_id: 2, body: "Our First Backer!
-
-In honor of our first backer, I will find a pug and dance with it. Three more backers and I'll post a photo.")
-
-
-Update.create(project_id: 2, body: "10th of the Way
-
-As Hamlet says to the players...'I really love pugs, you guys.'")
+Update.create(project_id: 2, title: "Our First Backer!",
+body: "In honor of our first backer, I will find a pug and dance with it. Three more backers and I'll post a photo.")
 
 
-Update.create(project_id: 2, body: "Stream It
-
-For those who can't actually fly to see puglet, we're willing to give anybody who donates enough to get a ticket a link to watch the show stream.")
-
-
-Update.create(project_id: 2, body: "Birthday
-
-My birthday is Saturday! ...But remember, Pug Day is every day.")
+Update.create(project_id: 2, title: "10th of the Way",
+body: "As Hamlet says to the players...'I really love pugs, you guys.'")
 
 
-Update.create(project_id: 2, body: "Pug Life
-
-'Alas poor Pug-rick, I knew him well.'")
-
-
-Update.create(project_id: 2, body: "Beware the Ides of--Wait, That's Puglius Caesar
-
-'Et tu, Puglet?'")
+Update.create(project_id: 2, title: "Stream It",
+body: "For those who can't actually fly to see puglet, we're willing to give anybody who donates enough to get a ticket a link to watch the show stream.")
 
 
-Update.create(project_id: 2, body: "Math
+Update.create(project_id: 2, title: "Birthday",
+body: "My birthday is Saturday! ...But remember, Pug Day is every day.")
 
-Puglet Math
+
+Update.create(project_id: 2, title: "Pug Life",
+body: "'Alas poor Pug-rick, I knew him well.'")
+
+
+Update.create(project_id: 2, title: "Beware the Ides of--Wait, That's Puglius Caesar",
+ body: "'Et tu, Puglet?'")
+
+
+Update.create(project_id: 2, title: "Math",
+body: "Puglet Math
 
 If all 147 backers donate an extra $19.63, Puglet will be funded instantly.
 
 And all pugs will rejoice.")
 
 
-Update.create(project_id: 2, body: "3 Days
-
-Can
+Update.create(project_id: 2, title: "3 Days",
+body: "Can
 
 We
 
@@ -259,9 +245,8 @@ Having already failed at making a giant Lionel Richie Head once before, we’re 
 Contribution.create(project_id: 3, user_id: 1, amount: 8044)
 
 
-Update.create(project_id: 3, body: "HELLO, WE DID IT!
-
-Thank you so much for backing and believing in this mad idea. Because of you we're officially bringing Lionel Richie’s Head to Bestival. You’re Awesome and now you can decide how big it gets and how far it goes?
+Update.create(project_id: 3, title: "HELLO, WE DID IT!",
+body: "Thank you so much for backing and believing in this mad idea. Because of you we're officially bringing Lionel Richie’s Head to Bestival. You’re Awesome and now you can decide how big it gets and how far it goes?
 
 Making it bigger means you can go into his head and take his phone call. This is our big goal and with just 12 days left we’re going for it! So please continue to share the project and tell your friends that now is the time to pledge. Wherever you are in the world, we want to bring Lionel Richie’s Head to you. See you inside!
 
@@ -269,9 +254,8 @@ Love & gratitude 
 Dave, Kill & Lionel ")
 
 
-Update.create(project_id: 3, body: "HOLD YOUR HEAD UP HIGH!
-
-To the greatest backers and friends on the planet
+Update.create(project_id: 3, title: "HOLD YOUR HEAD UP HIGH!",
+body: "To the greatest backers and friends on the planet
 
 Your shares and pledges have filled Lionel Richie's Head with sincere gratitude. You guys are the best and we can't wait to share this journey with you. It's hard to express how truly thankful we are so we'll let Lionel's lyrics do it for us. Sing along now!
 
@@ -284,9 +268,8 @@ Thanks again
 Dave, Kill & Lionel")
 
 
-Update.create(project_id: 3, body: "What people say about Lionel Richie’s Head?
-
-A grande tête to compete with any festival big top - The Guardian
+Update.create(project_id: 3, title: "What people say about Lionel Richie’s Head?",
+body: "A grande tête to compete with any festival big top - The Guardian
 
 A surreal experience par excellence - It's Nice That
 

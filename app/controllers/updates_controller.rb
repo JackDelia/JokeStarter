@@ -14,6 +14,6 @@ class UpdatesController < ApplicationController
 
   private
   def update_params
-    params.require(:update).permit(:body, :project_id)
+    params.require(:update).permit(:body, :project_id, :title)
   end
 end
