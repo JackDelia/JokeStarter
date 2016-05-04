@@ -47,7 +47,7 @@ module.exports = React.createClass({
 
     var form = "";
 
-    if(this.state.project.user_id === UserStore.currentUser().id)
+    if(UserStore.currentUser() && this.state.project.user_id === UserStore.currentUser().id)
       form = (
         <form id="update-form" onSubmit={this.addUpdate}>
         <textarea rows="3" cols="40"
@@ -65,6 +65,9 @@ module.exports = React.createClass({
         <p className="update">{update.body}</p>
         </li>);
     });
+
+    if (updates.length === 0)
+      updates = <div className="placeholder">No Updates Yet!</div>;
 
     return (
       <div id="project-updates=container">

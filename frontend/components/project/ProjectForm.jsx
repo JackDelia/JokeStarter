@@ -23,6 +23,9 @@ module.exports = React.createClass({
 
   handleSubmit: function(e){
     e.preventDefault();
+    if(!UserStore.currentUser())
+      hashHistory.push("/signin");
+
     if(!this.state.imageUrl)
       this.state.imageUrl = undefined;
     var params = {

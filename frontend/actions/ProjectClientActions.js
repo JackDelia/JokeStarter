@@ -25,6 +25,17 @@ module.exports = {
     };
 
     ProjectUtil.addUpdate(projectId, params);
-  }
+  },
+
+  followProject: function(userId, projectId){
+    var params = {
+      project_id: projectId,
+      user_id: userId
+    };
+
+    ProjectUtil.followProject(params);
+  },
+
+  unfollowProject: ProjectUtil.unfollowProject
 
 };

@@ -56,6 +56,25 @@ module.exports = {
     });
   },
 
+  followProject: function(params){
+    $.ajax({
+      method: "POST",
+      url: "/follows",
+      dataType: "json",
+      data: {follow: params},
+      success: ProjectServerActions.receiveOneFollow
+    });
+  },
+
+  unfollowProject: function(followId){
+    $.ajax({
+      method: "DELETE",
+      url: "/follows/"+followId,
+      dataType: "json",
+      success: ProjectServerActions.loseOneFollow
+    });
+  },
+
   addUpdate: function(projectId, params){
     $.ajax({
       method: "POST",

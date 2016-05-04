@@ -22,6 +22,15 @@ function addOneUser(user) {
   UserStore.__emitChange();
 }
 
+function addFollow(follow) {
+  _user.follows.push(follow);
+  UserStore.__emitChange;
+}
+
+function removeFollow(followId) {
+
+}
+
 UserStore.currentUser = function(){
   return _user;
 };
@@ -59,6 +68,12 @@ UserStore.__onDispatch = function(payload){
       break;
     case UserConstants.RECEIVE_ONE_USER:
       addOneUser(payload.user);
+      break;
+    case "RECEIVE_FOLLOW":
+      addFollow(payload.follow);
+      break;
+    case "LOSE_FOLLOW":
+      removeFollow(payload.follow);
       break;
   }
 };

@@ -92,6 +92,9 @@ module.exports = React.createClass({
         {project.title}</li>);
     }.bind(this));
 
+    if (projectElements.length === 0)
+      projectElements = <div className="placeholder">No Projects</div>;
+
     return (
       <div className="user-detail-container">
         <h1>Profile For {user.username}</h1>

@@ -29,6 +29,20 @@ module.exports = {
       actionType: ProjectConstants.RECEIVE_SINGLE_UPDATE,
       update: update
     });
+  },
+
+  receiveOneFollow: function(follow){
+    Dispatcher.dispatch({
+      actionType: "RECEIVE_FOLLOW",
+      follow: follow
+    });
+  },
+
+  loseOneFollow: function(follow){
+  Dispatcher.dispatch({
+      actionType: "LOSE_FOLLOW",
+      follow: follow.deleted
+    });
   }
 
 };

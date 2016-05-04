@@ -1,4 +1,5 @@
 var ProjectClientActions = require("../../actions/ProjectClientActions"),
+    UserStore = require("../../stores/UserStore"),
     ProjectStore = require("../../stores/ProjectStore"),
     React = require('react'),
     Modal = require('react-modal'),
@@ -47,6 +48,23 @@ module.exports = React.createClass({
     hashHistory.push("/projects/"+this.props.params.projectId + "/updates");
   },
 
+  follow: function(){
+    if(!UserStore.currentUser())
+      hashHistory.push("/signin");
+    ProjectClientActions.followProject(UserStore.currentUser().id, this.props.params.projectId);
+  },
+
+  unfollow: function(){
+    if(!UserStore.currentUser())
+      hashHistory.push("/signin");
+    var followId = UserStore.currentUser().follows.filter(function(follow){
+      return follow.user_id === UserStore.currentUser().id &&
+        follow.project_id === this.props.params.projectId;
+    }.bind(this));
+
+    ProjectClientActions.unfollowProject(followId);
+  },
+
   render: function(){
     var project = this.state.project;
     if(!project)
@@ -76,6 +94,20 @@ module.exports = React.createClass({
     if(this.state.timeRemaining <= 0)
       timer = <div id="finished-timer">TIME OVER</div>;
 
+    if(UserStore.currentUser() &&
+      UserStore.currentUser().follows.some(function(follow){
+        return follow.project_id === this.state.project.id;
+      }.bind(this)))
+      var followButton = (
+        <button className="btn btn-default" onClick={this.unfollow}>
+          Unfollow
+        </button>);
+    else
+      var followButton = (
+        <button className="btn btn-default" onClick={this.follow}>
+          Follow
+        </button>);
+
     return (
       <div id="project-detail-container">
         {timer}
@@ -95,6 +127,8 @@ module.exports = React.createClass({
            <li className="link project-link"onClick={this.goToUpdates}>
              Updates
            </li>
+
+           <li>{followButton}</li>
          </ul>
        </nav>
 

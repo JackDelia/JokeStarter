@@ -36,6 +36,15 @@ function addComment(comment) {
   ProjectStore.__emitChange();
 }
 
+function addFollow(follow) {
+  _projects[follow.project_id].follows.push(follow);
+  ProjectStore.__emitChange;
+}
+
+function removeFollow(followId) {
+
+}
+
 function addUpdate(update) {
   var toUpdate = _projects[update.project_id];
 
@@ -86,6 +95,12 @@ ProjectStore.__onDispatch = function(payload){
       break;
     case ProjectConstants.RECEIVE_SINGLE_UPDATE:
       addUpdate(payload.update);
+      break;
+    case "RECEIVE_FOLLOW":
+      addFollow(payload.follow);
+      break;
+    case "LOSE_FOLLOW":
+      removeFollow(payload.follow);
       break;
 
   }
