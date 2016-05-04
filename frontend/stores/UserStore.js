@@ -28,7 +28,11 @@ function addFollow(follow) {
 }
 
 function removeFollow(followId) {
-
+  for (var i = 0; i < _user.follows.length; i++) {
+    if(_user.follows[i].id == followId)
+      _user.follows.splice(i,1);
+  }
+  UserStore.__emitChange();
 }
 
 UserStore.currentUser = function(){

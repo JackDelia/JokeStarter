@@ -59,8 +59,8 @@ module.exports = React.createClass({
       hashHistory.push("/signin");
     var followId = UserStore.currentUser().follows.filter(function(follow){
       return follow.user_id === UserStore.currentUser().id &&
-        follow.project_id === this.props.params.projectId;
-    }.bind(this));
+        follow.project_id == this.props.params.projectId;
+    }.bind(this))[0].id;
 
     ProjectClientActions.unfollowProject(followId);
   },

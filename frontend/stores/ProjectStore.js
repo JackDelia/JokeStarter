@@ -42,7 +42,7 @@ function addFollow(follow) {
 }
 
 function removeFollow(followId) {
-
+  
 }
 
 function addUpdate(update) {
@@ -79,7 +79,7 @@ ProjectStore.search = function(searchString) {
   return projectsArray.filter(function(project){
     var title = project.title;
     return ((title.toLowerCase()).indexOf(searchString.toLowerCase()) > -1);
-  });
+  }).splice(0,5);
 };
 
 ProjectStore.__onDispatch = function(payload){
