@@ -17,6 +17,9 @@ the_pug.reset_session_token_and_save
 lionel = User.new(username: "Hungry Castle", password: "lionel")
 lionel.reset_session_token_and_save
 
+firefly_reference_here = User.new(username: "Kurt Braunohler", password: "thesky")
+firefly_reference_here.reset_session_token_and_save
+
 guest = User.new(username: "Guest", password: "gloriainexcelsiusdiscordia")
 guest.reset_session_token_and_save
 
@@ -297,6 +300,98 @@ One of the funniest things I've seen on JokeStarter - USA TODAY")
 
 
 
+
+#Take My Love, Take My Land...
+
+Project.create(title: "Kurt Braunohler's Cloud Project",
+    body: "Skywriting is crazy. We’re forcing clouds to say things. That’s inherently funny. How great would it be to look up one day and there’s a message in the sky, for no other reason other than itself. It’s not trying to sell you anything, it’s not trying to tell you something. It’s just there.
+
+I got some quotes from a skywriter on how much it would cost to have him spell out some jokes in the sky over Los Angeles. Here are the options: for a 10-15 character message – it’s about $4,000. For a running joke of up to 5 lines at 20 characters each – that’s around $10,000. So it depends on how much we raise. Please help me pull of this incredibly idiotic stunt. And I need your help to choose what message we should put in the sky. Everyone who donates gets to vote. See below for some options on what we can write.
+
+But first, a little more on WHY:
+
+I think we can all agree that life is pretty bleak place to be a lot of the time. Often you might even think, “Who thought this was a good idea to begin with!?” (God – what a jerk.) But I think that if there’s a way we can, just for a fleeting moment, give strangers an unexpected gift of absurdity, then I think we can make the world a slightly better place.
+
+Up until this point, I’ve been attempting to do this by going into bookstores and signing dedications from the “author” and putting them back on the shelf (“Jive Hustler! – Clive Cussler”). Or by buying greeting cards, taking them home, altering them with new endings and then taking them back and putting them back on the shelf. You might have seen some of my greeting card project online.
+
+But with these techniques I’m maybe affecting 1 or 2 people. I want to expand the audience. So
+
+Here’s the details:
+
+$4,000
+
+This is done by one plane, using cool acrobatics to spell out the message. This is the “classic” skywriting. I could do 1 of these phrases – pick your favorite!
+
+“How do I land?”
+
+“Clouds 4 EVA”
+
+“OMG I’m flying!”
+
+“Tweet me bro!”
+
+“God’s Fartin’!”
+
+$10,000
+
+This uses 5 planes to spell out the message in a “dot matrix” style of printing. I could do either of these “jokes” – they would play out in real time like a real conversation – pick your favorite!
+
+-Knock knock
+
+-Who’s there?
+
+-Me
+
+-Me who?
+
+-Clouds!
+
+Or
+
+-Hey man.
+
+-Hey.
+
+-What’s up?
+
+-Skywriting.
+
+-Oh. Sorry. I forgot.
+
+And thanks to JohnVH Photography for the photo of the plane.
+
+Please donate some money today! Together we can insert absurdity into strangers’ lives and (hopefully) make the world a better place.
+
+Risks and challenges
+
+The risks and challenges of this project is just me being able to use the phone.
+
+As long as I have the money, and can get to a phone to call the skywriting guy, we can get this done.
+
+I GUARANTEE IT!",
+    goal: 4000,
+    rewards: [
+      [10, "I'll tweet a joke on twitter just for you. With your twitter handle tagged at the end."],
+
+      [25, "You get a 2 free tickets to Hot Tub w/ Kurt and Kristen at the Virgil, in Los Angeles, CA"],
+
+      [50, "You get a framed photo of the skywriting, with a personal thank you signed on the back."],
+
+      [100, "You get the framed photo of the skywriting PLUS You get 2 free tickets to Hot Tub w/ Kurt and Kristen at the Virgil, in Los Angeles, CA.
+PLUS
+A copy of my forthcoming album on Kill Rock Star Records
+PLUS
+I'll mail you a Greeting Card Project card."],
+
+      [1000, "You get everything in the $100, but I'll also come to where you live and serve as designated driver for you for a full night. And I'll even pay for dinner."],
+
+      [4000, "I'll marry you."]],
+
+    user_id: firefly_reference_here.id,
+    thumbnail_image_url: "http://pesn.com/2014/02/09/9602438_Chemtrail-sky-writing-could-prove-theyre-not-contrails/Chemtrails-question-300x204_rd.jpg",
+    main_image_url: "https://ksr-ugc.imgix.net/projects/435911/photo-original.jpg?w=1536&h=864&fit=fill&bg=000000&v=1397807790&auto=format&q=92&s=9585c00e4d73e7079d46b82533417150")
+
+Contribution.create(project_id: 4, user_id: 1, amount: 1700)
 
 Project.create(title: "Second",
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
