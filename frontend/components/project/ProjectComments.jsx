@@ -59,12 +59,10 @@ module.exports = React.createClass({
         </li>);
     }.bind(this));
 
-    return (
-      <div id="project-comments=container">
-        <ul id="project-comment-list">
-          {comments}
-        </ul>
+    var form = "";
 
+    if(UserStore.currentUser())
+      form = (
         <form id="comment-form" onSubmit={this.addComment}>
           <textarea rows="3" cols="40"
             placeholder="Write comment here"
@@ -74,6 +72,15 @@ module.exports = React.createClass({
             onChange={this.onCommentChange}/><br/>
           <input type="submit" className="btn" value="Add Comment"/>
         </form>
+      );
+
+    return (
+      <div id="project-comments=container">
+        <ul id="project-comment-list">
+          {comments}
+        </ul>
+
+        {form}
       </div>
     );
   }

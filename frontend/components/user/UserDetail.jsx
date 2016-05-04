@@ -97,14 +97,14 @@ module.exports = React.createClass({
 
     return (
       <div className="user-detail-container">
+        {moneyElement}
+        {addMoneyButton}
         <h1>Profile For {user.username}</h1>
         <h2>Projects</h2>
         <ul className="project-index-container">
           {projectElements}
         </ul><br/>
 
-        {moneyElement}
-        {addMoneyButton}
 
       <Modal isOpen={this.state.addMoneyFormOpen}
         onRequestClose={this.closeModals}

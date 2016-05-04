@@ -99,12 +99,12 @@ module.exports = React.createClass({
         return follow.project_id === this.state.project.id;
       }.bind(this)))
       var followButton = (
-        <button className="btn btn-default" onClick={this.unfollow}>
+        <button className="btn btn-default btn-danger" onClick={this.unfollow}>
           Unfollow
         </button>);
     else
       var followButton = (
-        <button className="btn btn-default" onClick={this.follow}>
+        <button className="btn btn-default btn-success" onClick={this.follow}>
           Follow
         </button>);
 

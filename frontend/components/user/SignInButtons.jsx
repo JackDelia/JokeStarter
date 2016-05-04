@@ -47,7 +47,7 @@ module.exports = React.createClass({
     if(this.state.currentUser)
       buttons = (<nav className="navbar navbar-default navbar-fixed-top">
         <a href={"#/users/"+this.state.currentUser.id} className="right-nav">
-          Signed in as {this.state.currentUser.username}
+          {this.state.currentUser.username}
         </a>
 
           <button className="btn btn-default navbar-btn right-nav"

@@ -29,7 +29,8 @@ html, body {
  }
 
  .placeholder {
-   font-size: 35px;
+   font-size: 50px;
+   text-align: center;
    color: lightgrey;
    margin: 20%;
    width: 100%;
@@ -39,9 +40,11 @@ html, body {
    font-size: 20px;
    padding: 5%;
    white-space: pre-wrap;
+   border-bottom: 3px solid grey;
  }
 
 .main {
+  background-image: url("https://static.pexels.com/photos/6241/sky-sunset-red-romantic.jpg");
   background-color: white;
   height: 100%;
   width: 100%;
@@ -151,6 +154,7 @@ html, body {
 .sign-in-field {
   height: 35px;
   width: 235px;
+  padding: 4px;
   font-size: 25px;
   color: #321395;
 
@@ -247,7 +251,7 @@ html, body {
   display: flex;
   flex-direction: row;
   margin: 3%;
-  /*margin-left: 7%;*/
+  background-color: white;
   width: 94%;
   align-items: flex-start;
   justify-content: space-around;
@@ -255,7 +259,7 @@ html, body {
 }
 
 #timer {
-  margin-right: 10%;
+  margin-left: 1%;
   font-size: 40px;
   color: green;
 }
@@ -277,6 +281,7 @@ html, body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .project-link {
