@@ -26,6 +26,12 @@ sonic_screwdriver.reset_session_token_and_save
 chipotle = User.new(username: "Noboru Bitoy", password: "tacostacostacos")
 chipotle.reset_session_token_and_save
 
+meat_for_the_meat_god = User.new(username: "Alli Dryer", password: "baconforthebaconthrone")
+meat_for_the_meat_god.reset_session_token_and_save
+
+joker_card = User.new(username: "Travis Peterson and Nick Peterson", password: "callingcard")
+joker_card.reset_session_token_and_save
+
 guest = User.new(username: "Guest", password: "gloriainexcelsiusdiscordia")
 guest.reset_session_token_and_save
 
@@ -383,6 +389,9 @@ I'll mail you a Greeting Card Project card."],
 Contribution.create(project_id: 4, user_id: 1, amount: 1700)
 
 
+
+#Don't Pani-wait wrong sci-fi
+
 Project.create(title: "We're putting a TARDIS into orbit - Really!",
     body: "We're sending a TARDIS into space!
 
@@ -563,46 +572,120 @@ The Skydive will be happening near the end of March.
 
 The Zero G plane is scheduled for takeoff in Chicago on June 7th, 2014.")
 
-40.times do
-  randomUser = User.new(username: Faker::Internet.user_name, password: "PASSWORD")
+
+
+#MEAT!
+
+Project.create(title: "Meat Soap - Get That Bacon-Fresh Scent!",
+  body: "We think that...
+
+
+everyone should smell like meat!
+
+
+We firmly believe that the aroma of freshly cooked bacon should linger long after breakfast and that meaty and clean go hand in hand. That's how we arrived at Meat Soap. By using animal byproducts that are typically discarded as main ingredients in bars of soap, we are looking to change minds about what 'clean' means. A variety of fats will be rendered by our crack team of fat melters to create a rainbow of colors, scents, and flavors (but don't eat Meat Soap, no matter how tempting!)
+
+
+Our plan is to design and fabricate a custom soap mold to produce our collection of butcher paper-wrapped soaps. We hope to spark a lively debate about personal hygiene and meat consumption, while resurrecting the tradition of using animal-based resources to their fullest potential. We think clean people should smell like bacon, not like mint or roses.
+
+
+We must raise enough money to pay to for a set of soap molds from a custom mold producer out of Portland, Oregon. Once we hit our funding target we'll procure the molds, melt some fat, and develop our bars of soap. Producing the custom molds will cost a minimum of $500, so the more bars of soap people request, the lower the cost of the soap! We'll order the raw materials for our soap (assorted meat fat to render and glycerin soap base) and we'll manufacture enough soap to keep you lathered in protein! Then we'll lovingly wrap each bar with butcher paper and send it to you! Don't mind the grease stains, they add character!
+
+
+FAQ
+
+
+Is it safe?
+Er... probably? Meat Soap has not been tested on animals but we've been washing our hands with our prototypes. Since Meat Soap contains no preservatives it won't last forever, and for the love of Mike DO NOT TRY TO EAT IT NO MATTER HOW DELICIOUS IT SMELLS.
+
+
+What's with the stickers?
+We want you to stick our cute piggy logo on everything. We're looking at making them scratch n' sniff to smell like bacon if possible, but otherwise they'll be awesome vinyl stickers for you to treasure!
+
+
+Wait - if I pledge $400 you'll buy a PIG?
+Yes. We'll buy a pig through Heifer International to help make someone's life better!
+
+
+What happens if you don't get funded?
+Then your pledge will not be charged and Meat Soap will fade into a tragic cloud of obscurity and darkness forever.
+
+
+What if I'm a Vegetarian?
+Well, some of us like plants a little more than others. But you can still get some Meat Soap! That way you'll smell like meat without needing to eat it!",
+  goal: 1500,
+  rewards:[
+    [5, "Tiny Bubbles Package - Thanks! You’ll receive a set of meat soap stickers and our undying love and appreciation."],
+    [15, "Recovering Vegetarian Package - So, you've finally seen the bacon-colored light and come to the charred side? A set of meat soap stickers, one bar of meat soap, a listing on our website await you!"],
+    [35, "Card-carrying Carnivore Package - Mmmm, meat. You would drink it for breakfast if you could! You’ll receive two bars of meat soap, a set of stickers, a website listing, and a spiffy Meat Soap graphic tee shirt."],
+    [100, "Super Soap Suds Package - Can't decide whether today is a bacon or a brisket day? Why choose! Three bars of Meat Soap, each with a unique scent, a Meat Soap poster, and everything else in the Card-carrying Carnivore Package can be yours!"],
+    [250, "Meat Soap Glorious Patron Package - Glorious? Check. Meat Fanatic? You'd say yes but the brisket might fall out of your mouth! Five bars of Meat Soap, each with a unique scent, a special listing on our website, a limited-edition Meat Soap poster autographed by the team, and everything else in the Card-carrying Carnivore Package can be yours, and might keep you out of the kitchen for, oh, 15 minutes."],
+    [400, "Benevolent Bather Bundle - Wow, uh, we don't really know what to say! But if you're feeling this generous, we will send you everything in the Glorious Patron Package, as much awesome karma as the USPS will allow us to ship, AND donate a pig, in your honor, to Heifer International."]
+  ],
+  user_id: meat_for_the_meat_god.id,
+  thumbnail_image_url: "https://ksr-ugc.imgix.net/projects/19730/photo-original.jpg?w=1536&h=864&fit=fill&bg=FFFFFF&v=1397760508&auto=format&q=92&s=beae6dddd7effb43b3bc5f0f8abb7ba4",
+  main_image_url: "https://ksr-ugc.imgix.net/projects/19730/photo-original.jpg?w=1536&h=864&fit=fill&bg=FFFFFF&v=1397760508&auto=format&q=92&s=beae6dddd7effb43b3bc5f0f8abb7ba4")
+
+
+
+#This is the song that never ends...
+
+Project.create(title: "The Best Prank Birthday Card Ever!",
+  body: "Yes, this is 100% real.
+
+The cards are real, and they're spectacular.
+
+How does it Work?
+
+It's very simple. Your card is delivered to you in a 'Safe mode'. Here you can start and stop the song as much as you want. After you sign the card with a lovely message, pull the activation tab inside the card which will activate the card. Then slide it into an envelope and deliver!
+
+You want Proof?
+
+Some people may doubt our card can go as long as 3 hours, here's a vid using an early prototype where it goes for nearly 5 hours. Please watch all 5 hours of it! It's highly entertaining:
+https://youtu.be/rQG3fKdpKgg
+
+The idea is simple and fun.
+
+We like to mess with our friends. This is an inexpensive and effective way to drive someone crazy: a card that won't shut up unless it's physically destroyed. Who wouldn't want that? 'Some people just want to watch the world burn' says Alfred. We just want to laugh at our friends.
+
+Why JokeStarter?
+
+Products like this require volume to get prices down to a respectable level. The more funds we have, the cheaper our cards will be. Our cards cost way less than that fancy hand-beaded one you bought your aunt after her colonoscopy, and ours come with the satisfaction of knowing you've annoyed the people you love most.
+
+JokeStarter is a start but we really want to get this in a specialized stores near you.
+
+What is next?
+
+A Christmas card would be perfect! It is a perfect gift for the season of caring. And of course, we would like to update the Joker Birthday card so the design and song gets a refresh. And down the line we can work on Easter, Graduation, weddings, etc. We even have plans for a Joker Sympathy Card. On second thought... maybe not.
+
+Risks and challenges
+
+We take pride in offering the finest quality cards we can get from China. Our overhead is small and our crew is motley. We'll run a small, tight operation with big dreams.
+
+Really the only risk is for you and missing out. And possibly starting a war.",
+  goal: 7500,
+  rewards:[
+    [15, "You get 1 Joker Birthday Card that sings the annoying Happy Birthday song nonstop for over 3 hours."],
+    [25, "You get 2 Joker Birthday Cards that sing the annoying Happy Birthday song nonstop for over 3 hours."],
+    [55, "You get 5 Joker Birthday Cards that sing the annoying Happy Birthday song nonstop for over 3 hours."],
+    [105, "You get 10 Joker Birthday Cards that sing the annoying Happy Birthday song nonstop for over 3 hours."],
+    [10000, "500 custom Joker cards! Great for companies, teams, gifts, brands and campaigns.
+
+The ultimate experience! Customize your own Joker Cards the way you want them. Your brand, your words, and your song or voice (30 seconds or less). Includes test samples before final shipment.
+
+Jokes are great but the magic is in the loop."]
+  ],
+  user_id: joker_card.id,
+  thumbnail_image_url: "https://ksr-ugc.imgix.net/projects/1238406/photo-original.jpg?w=1536&h=864&fit=fill&bg=FFFFFF&v=1430320753&auto=format&q=92&s=099679acb098c08d7c725abd75a89245",
+  main_image_url: "https://ksr-ugc.imgix.net/projects/1238406/photo-original.jpg?w=1536&h=864&fit=fill&bg=FFFFFF&v=1430320753&auto=format&q=92&s=099679acb098c08d7c725abd75a89245")
+
+
+
+50.times do
+  randomUser = User.new(username: Faker::Internet.user_name, password: "PASSWORD!")
   randomUser.reset_session_token_and_save
 end
 
 200.times do |project|
-  Comment.create(user_id: rand(40)+1, project_id: rand(6)+1, body: Faker::Hipster.sentence)
+  Comment.create(user_id: rand(50)+1, project_id: rand(7)+1, body: Faker::Hipster.sentence)
 end
-
-Project.create(title: "Second",
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in r
-      eprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-       pariatur. Excepteur sint occaecat cupidatat non proident,
-       sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    goal: 30,
-    rewards: [
-      [1, "ucbrbufbrb rubfbrufrf irffnrnfn
-      bfu ufbrb frbfu rbfubrbf urbufbbrf uburbf brubfubrbf"],
-
-      [20, "ubvonvebive utbgivetrbverb iugbbruigbiebiug ertgbbebgi
-      bigbebugbrebguir begburbgriu ebguribgir bgrbeiubg"],
-
-      [20, "ufurbfurb ubrubugbrgb urbgbuburb bugburbgub gugbrbgurbgu
-      gubrbug burbgubru gburbgbru gburbgrbu gburbgbrubg
-      ugrbugrb ugbubgr grbguugbug bubuini"]],
-    user_id: jack.id,
-    thumbnail_image_url: "http://www.uncubeme.com/wp-content/uploads/2008/08/officejoke.jpg",
-    main_image_url: "http://www.uncubeme.com/wp-content/uploads/2008/08/officejoke.jpg")
-
-Project.create(title: "phoned-in",
-  body: "Lorem",
-  goal: 1000000,
-  rewards:[
-    [1, "urbf"],
-    [2, "ubvg"],
-    [3, "ufurbf"]
-  ],
-  user_id: jack.id,
-  thumbnail_image_url: "https://usercontent2.hubstatic.com/572751_f520.jpg",
-  main_image_url: "https://usercontent2.hubstatic.com/572751_f520.jpg")
