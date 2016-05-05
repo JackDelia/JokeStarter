@@ -26,8 +26,16 @@ module.exports = React.createClass({
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
 
-    if(!this.state.imageUrl)
-      this.state.imageUrl = undefined;
+    if(!this.state.mainImageUrl){
+      if(this.state.thumbnailImageUrl)
+        this.state.mainImageUrl = this.state.thumbnailImageUrl;
+      else
+        this.state.mainImageUrl = undefined;
+    }
+
+    if(!this.state.thumbnailImageUrl)
+      this.state.thumbnailImageUrl = this.state.mainImageUrl;
+
     var params = {
       title: this.state.title,
       body: this.state.body,

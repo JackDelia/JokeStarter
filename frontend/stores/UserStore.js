@@ -17,7 +17,7 @@ function addUsers(users){
 
 function addOneUser(user) {
   _allUsers[user.id] = user;
-  if(user.id === _user.id)
+  if(_user && user.id === _user.id)
     _user = user;
   UserStore.__emitChange();
 }
