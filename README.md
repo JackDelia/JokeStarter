@@ -20,22 +20,25 @@ JokeStarter allows for the creation of new projects
 
 ![create]
 
+
 As well as viewing projects,
 
 ![project]
+
 
 contributing to projects,
 
 ![contribute]
 
+
 commenting on projects,
 
 ![comment]
 
+
 and posting updates to your own projects
 
 ![update]
-
 
 
 [auth]: ./docs/readme/ss_auth.png

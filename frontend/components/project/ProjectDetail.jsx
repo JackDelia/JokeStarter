@@ -1,4 +1,5 @@
 var ProjectClientActions = require("../../actions/ProjectClientActions"),
+    UserClientActions = require("../../actions/UserClientActions"),
     UserStore = require("../../stores/UserStore"),
     ProjectStore = require("../../stores/ProjectStore"),
     React = require('react'),
@@ -13,7 +14,9 @@ module.exports = React.createClass({
 
   componentDidMount: function(){
     this.projectListener = ProjectStore.addListener(this.changed);
+    this.userListener = UserStore.addListener(this.changed);
     ProjectClientActions.fetchSingleProject(this.props.params.projectId);
+    UserClientActions.fetchUsers();
     this.countdown = setInterval(function(){
       this.setState({timeRemaining: this.state.timeRemaining-1});
     }.bind(this), 1000);
@@ -21,6 +24,7 @@ module.exports = React.createClass({
 
   componentWillUnmount: function(){
     this.projectListener.remove();
+    this.userListener.remove();
     clearInterval(this.countdown);
   },
 
@@ -57,17 +61,13 @@ module.exports = React.createClass({
   unfollow: function(){
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
-    var followId = UserStore.currentUser().follows.filter(function(follow){
-      return follow.user_id === UserStore.currentUser().id &&
-        follow.project_id == this.props.params.projectId;
-    }.bind(this))[0].id;
 
-    ProjectClientActions.unfollowProject(followId);
+    ProjectClientActions.unfollowProject(this.props.params.projectId, UserStore.currentUser().id);
   },
 
   render: function(){
     var project = this.state.project;
-    if(!project)
+    if(!project || !UserStore.find(project.user_id))
       return <div/>;
 
     var days = Math.floor(this.state.timeRemaining/86400);
@@ -96,7 +96,7 @@ module.exports = React.createClass({
 
     if(UserStore.currentUser() &&
       UserStore.currentUser().follows.some(function(follow){
-        return follow.project_id === this.state.project.id;
+        return follow.id === this.state.project.id;
       }.bind(this)))
       var followButton = (
         <button className="btn btn-default btn-danger" onClick={this.unfollow}>

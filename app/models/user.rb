@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :contributions
   has_many :comments
   has_many :follows
+  has_many :projects_followed,
+    through: :follows,
+    source: :project
 
   def password=(password)
     @password = password

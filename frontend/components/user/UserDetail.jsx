@@ -17,7 +17,7 @@ module.exports = React.createClass({
 
   componentDidMount: function(){
     this.listener = UserStore.addListener(this.changed);
-    UserClientActions.fetchSingleUser();
+    UserClientActions.fetchSingleUser(this.props.params.userId);
   },
 
   componentWillUnmount: function(){
@@ -53,7 +53,7 @@ module.exports = React.createClass({
 
   render: function(){
     var user = this.state.user;
-    if(!user)
+    if(!user || !user.follows)
       return <div/>;
 
 
@@ -95,16 +95,38 @@ module.exports = React.createClass({
     if (projectElements.length === 0)
       projectElements = <div className="placeholder">No Projects</div>;
 
+    var followedProjectElements = user.follows.map(function(follow){
+      return (
+        <li className="project-list-item"
+        key={follow.id}
+        onClick={this.clickProject.bind(this, follow.id)}>
+
+        <img className="thumbnail"
+          src={follow.thumbnail_image_url}/>
+
+        {follow.title}</li>);
+    }.bind(this));
+
+    if (followedProjectElements.length === 0)
+      followedProjectElements = <div className="placeholder">No Projects</div>;
+
     return (
       <div className="user-detail-container">
-        {moneyElement}
-        {addMoneyButton}
+        <div id="user-money">
+          {moneyElement}
+          {addMoneyButton}
+        </div>
         <h1>Profile For {user.username}</h1>
+
+      <h2>Followed Projects</h2>
+        <ul className="project-index-container">
+          {followedProjectElements}
+        </ul><br/>
+
         <h2>Projects</h2>
         <ul className="project-index-container">
           {projectElements}
         </ul><br/>
-
 
       <Modal isOpen={this.state.addMoneyFormOpen}
         onRequestClose={this.closeModals}

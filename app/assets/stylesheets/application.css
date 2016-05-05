@@ -157,6 +157,17 @@
  padding-bottom:5%;
  }
 
+ #user-money {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 7%; 
+ }
+
+ #user-money > div {
+   font-size: 25px;
+ }
+
  .button {
  background-color:#2bde73;
  color:#FFF;
@@ -500,6 +511,8 @@
  display:flex;
  flex-direction:column;
  align-items:center;
+ background-color:#FFEFEF;
+ padding: 5%;
  }
 
  .user-form {

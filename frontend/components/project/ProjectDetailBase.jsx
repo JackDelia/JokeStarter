@@ -9,7 +9,7 @@ var ProjectClientActions = require("../../actions/ProjectClientActions"),
 module.exports = React.createClass({
   getInitialState: function(){
     var project = ProjectStore.find(this.props.params.projectId);
-    return({project: project, showConfirmationModal: false, selectedReward: [0,0]});
+    return({project: project, showConfirmationModal: false, selectedReward: [0,0], error: ""});
   },
 
   componentDidMount: function(){
@@ -30,8 +30,24 @@ module.exports = React.createClass({
   clickRewardConfirmed: function(rewardAmount){
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
+
+    else if (this.state.project.deadline + this.state.project.age <= 0) {
+      var error = (
+      <div>
+        <div className="error">Project Funding Period Expired</div>
+      </div>
+    );
+      this.setState({showConfirmationModal: false, showErrorModal: true, error: error});
+    }
     else if (UserStore.currentUser().money < rewardAmount) {
-      this.setState({showConfirmationModal: false, showErrorModal: true});
+      var error = (
+      <div>
+        <div className="error">Insufficient funds</div>
+        <div className="link" onClick={this.goToCurrentUser}>Click here to add more</div>
+
+      </div>
+    );
+      this.setState({showConfirmationModal: false, showErrorModal: true, error: error});
     }
     else {
       ProjectClientActions.contribute(this.props.params.projectId,
@@ -119,8 +135,7 @@ module.exports = React.createClass({
           overlayClassName="modal-confirm-overlay"
          isOpen={this.state.showErrorModal}
          onRequestClose={this.closeErrorModal}>
-         <div className="error">Insufficient funds</div>
-         <div className="link" onClick={this.goToCurrentUser}>Click here to add more</div>
+          {this.state.error}
          <button className="btn btn-default" onClick={this.closeErrorModal}>Close</button>
        </Modal>
 

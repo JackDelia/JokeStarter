@@ -11,7 +11,7 @@ class ContributionsController < ApplicationController
     if @contribution.save
       render "/projects/show"
     else
-      render json: {errors: ["Invalid Contribution"]}
+      render json: {errors: ["Invalid Contribution"]}, status: 400
     end
   end
 

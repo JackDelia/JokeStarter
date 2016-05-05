@@ -42,7 +42,7 @@ function addFollow(follow) {
 }
 
 function removeFollow(followId) {
-  
+
 }
 
 function addUpdate(update) {

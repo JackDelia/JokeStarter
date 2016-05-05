@@ -66,10 +66,11 @@ module.exports = {
     });
   },
 
-  unfollowProject: function(followId){
+  unfollowProject: function(projectId, userId){
     $.ajax({
       method: "DELETE",
-      url: "/follows/"+followId,
+      url: "/follows/0",
+      data: {follow: {user_id: userId, project_id: projectId}},
       dataType: "json",
       success: ProjectServerActions.loseOneFollow
     });

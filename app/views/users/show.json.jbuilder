@@ -3,7 +3,7 @@ json.(@user, :username, :id)
 
 json.money @user.money_in_cents
 
-json.follows @user.follows, :project_id, :user_id, :id
+json.follows @user.projects_followed, :id, :title, :thumbnail_image_url
 
 
 if(@user)
