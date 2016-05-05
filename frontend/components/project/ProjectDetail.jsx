@@ -84,10 +84,10 @@ module.exports = React.createClass({
 
     var timer = (
       <div id="timer">
-        Time Left:&nbsp;
-        <span>{days}</span>:
-      <span>{hours}</span>:
-        <span>{minutes}</span>:
+        <span>Time Left:&nbsp;</span>
+        <span>{days}:</span>
+      <span>{hours}:</span>
+        <span>{minutes}:</span>
           <span>{seconds}</span>
       </div>
     );

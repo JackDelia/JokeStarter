@@ -42,6 +42,10 @@ module.exports = React.createClass({
     hashHistory.push("/users/"+ this.state.currentUser.id);
   },
 
+  clickLogo: function() {
+    hashHistory.push("/");
+  },
+
   render: function(){
     var buttons;
     if(this.state.currentUser)
@@ -53,6 +57,7 @@ module.exports = React.createClass({
           <button className="btn btn-default navbar-btn right-nav"
             onClick={this.signOut}>Sign Out</button>
           <SearchBar/>
+          <img onClick={this.clickLogo}id="navbar-logo" src="/assets/header-logo.png"/>
       </nav>);
     else
       buttons = (
@@ -65,6 +70,7 @@ module.exports = React.createClass({
             disabled={this.state.signUpOpen}
             onClick={this.signUp}>Sign Up</button>
           <SearchBar/>
+          <a href="/"><img id="navbar-logo" src="/assets/header-logo.png"/></a>
         </nav>
       );
 

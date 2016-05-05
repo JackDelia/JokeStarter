@@ -28,7 +28,10 @@ module.exports = React.createClass({
   changed: function(){
 
     if(UserStore.currentUser())
-      this.props.callback();
+      if(this.props.callback)
+        this.props.callback();
+      else
+        hashHistory.goBack();
 
     this.setState({errors: UserStore.getCurrentErrors()});
   },
@@ -36,12 +39,12 @@ module.exports = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
 
-    this.setState({username: "", password: ""});
+    this.setState({username: "", password: "", password2: ""});
 
     UserClientActions.createUser(this.state.username, this.state.password);
 
 
-    this.setState({username: "", password: ""});
+    this.setState({username: "", password: "", password2: ""});
   },
 
   render: function(){

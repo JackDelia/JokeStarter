@@ -42,7 +42,7 @@ Project.create(title: "Potato Salad",
   body: "Basically I'm just making potato salad. I haven't decided what kind yet.
 
 
-  Risks and challenges
+Risks and challenges
 
 It might not be that good. It's my first potato salad.",
   goal: 10,
