@@ -140,7 +140,7 @@ Solutions:
     [500, "Five tickets to the show and you get to hug the pug playing Puglet."],
     [1000, "Ten tickets to the production, the chance to meet and play with all the pugs, and the director will personally cook you spaghetti."],
     [5000, "Twenty tickets to the production, the chance to meet and play with all the pugs, the director will make you a spaghetti dinner, and you'll have the only walk-on role in the show. You'll be a human among pugs!"]],
-  user_id: lionel.id,
+  user_id: the_pug.id,
   thumbnail_image_url: "http://theshakespearestandard.com/wp-content/uploads/2015/02/halloween-pug-shakespeare.jpg",
   main_image_url: "https://ksr-ugc.imgix.net/projects/1082803/photo-original.jpg?w=1536&h=864&fit=fill&bg=84858A&v=1404768868&auto=format&q=92&s=0834eb2136c9fcee650ff1288b1c0e78")
 
