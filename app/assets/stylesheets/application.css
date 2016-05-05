@@ -39,7 +39,8 @@
  }
 
  #finished-timer {
- margin-right:10%;
+ text-align: center;
+ width: 100%;
  font-size:40px;
  color:red;
  }

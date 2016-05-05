@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504212410) do
+ActiveRecord::Schema.define(version: 20160505172141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160504212410) do
     t.datetime "updated_at",                                                                                                                                                                               null: false
     t.string   "thumbnail_image_url", default: "http://vignette4.wikia.nocookie.net/thehungergamesrp/images/6/63/Joker_card_coca_cola_by_takes_pics_n_runs-d5wxc0g.jpg/revision/latest?cb=20150408075317"
     t.string   "main_image_url",      default: "/assets/logo.png"
+    t.integer  "deadline",            default: 259200
   end
 
   add_index "projects", ["title"], name: "index_projects_on_title", unique: true, using: :btree

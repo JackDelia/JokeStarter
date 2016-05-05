@@ -32,7 +32,7 @@ module.exports = React.createClass({
 
   changed: function(){
     this.setState({project: ProjectStore.find(this.props.params.projectId)});
-    var timeRemaining = 259200 + this.state.project.age;
+    var timeRemaining = this.state.project.deadline + this.state.project.age;
     this.setState({timeRemaining: timeRemaining});
   },
 

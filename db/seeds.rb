@@ -46,6 +46,7 @@ Risks and challenges
 
 It might not be that good. It's my first potato salad.",
   goal: 10,
+  deadline: 252525,
   rewards: [
     [1, "With your help, we'll be on our way to a successful potato salad. You will get a 'thank you' posted to our website and I will say your name out loud while making the potato salad."],
     [2, "Receive a photo of me making the potato salad, a 'thank you' posted to our website and I will say your name out loud while making the potato salad."],
@@ -132,6 +133,7 @@ Solutions:
 - We'll use the money for food.
 - We may have to let them nap onstage.",
   goal: 5000,
+  deadline: 20000,
   rewards: [
     [10, "A ticket to the production once it is mounted."],
     [20, "Two tickets to the production and the chance to pet all the pugs."],
@@ -230,6 +232,7 @@ Risks and challenges
 
 Having already failed at making a giant Lionel Richie Head once before, we’re fully aware how difficult it is to convince people to actually fund a project like this. However a music festival is the one opportunity where literally anything goes. And Bestival is much more than your average music festival. The shear determination of Bestivalers to celebrate, music, culture and these sort of odd outdoor happenings is something we greatly love and admire. It’s why we believe they will help us make it. Jeez, if you've read this far you're probably the type to help us too. Thanks.",
     goal: 4900,
+    deadline: 45454,
     rewards: [
       [3, "Lionel Richie's Head VIP access"],
 
@@ -365,6 +368,7 @@ As long as I have the money, and can get to a phone to call the skywriting guy, 
 
 I GUARANTEE IT!",
     goal: 4000,
+    deadline: 2016,
     rewards: [
       [10, "I'll tweet a joke on twitter just for you. With your twitter handle tagged at the end."],
 
@@ -443,6 +447,7 @@ As you can see, the TARDIS satellite is done, and it is fully functioning, but s
 
 The other area of concern is obviously the launch itself. After all, the whole thing could explode. It has happened, rarely, and even more rarely today, but, things can go wrong. Also, for anyone who has watched and waited for a rocket launch (think about space shuttle missions) sometime there are delays from things like weather, equipment malfunction, electronics issues, etc. that can cause a launch to be delayed or scrubbed for another day. And since we are sharing payload capacity to make this mission affordable, we are subject to the launch manifest, and that too can effect the launch date. It's no different than buying a ticket on a 747. If there are mechanical issues, your flight will be delayed. What we're saying is, things can happen when you're putting a rocket in space, but these launches take place all the time without incident. There are thousands of satellites in the sky, dutifully going about their business, and more and more are added every time we turn around, so it isn't exactly 'risky.'",
     goal: 33000,
+    deadline: 14440,
     rewards: [
       [1, "JUST KNOWING: That you put a TARDIS in orbit around the Earth. That's pretty cool when you think about it. Whenever you hear something about the TARDIS in space or see something on the news or on the web, you'll be able to say you helped make it happen."],
 
@@ -512,6 +517,7 @@ If any of these potential risks occur, I will take full financial responsibility
 
 There is also a risk that the Zero G flight might not get funded (I know it's a lot of money!). If your donation is towards this particular cause and the campaign falls short, you will receive a shout out in the Skydive video, as well as another video where I will incorporate an intense, anti-gravity situation.",
     goal: 8,
+    deadline: 330000,
     rewards: [
       [1, "A completed version of the Deliciousness Graphic in a .PDF file is made available for you either by email or posted on my website."],
 
@@ -614,6 +620,7 @@ Then your pledge will not be charged and Meat Soap will fade into a tragic cloud
 What if I'm a Vegetarian?
 Well, some of us like plants a little more than others. But you can still get some Meat Soap! That way you'll smell like meat without needing to eat it!",
   goal: 1500,
+  deadline: 9001,
   rewards:[
     [5, "Tiny Bubbles Package - Thanks! You’ll receive a set of meat soap stickers and our undying love and appreciation."],
     [15, "Recovering Vegetarian Package - So, you've finally seen the bacon-colored light and come to the charred side? A set of meat soap stickers, one bar of meat soap, a listing on our website await you!"],
@@ -664,6 +671,7 @@ We take pride in offering the finest quality cards we can get from China. Our ov
 
 Really the only risk is for you and missing out. And possibly starting a war.",
   goal: 7500,
+  deadline: 424242,
   rewards:[
     [15, "You get 1 Joker Birthday Card that sings the annoying Happy Birthday song nonstop for over 3 hours."],
     [25, "You get 2 Joker Birthday Cards that sing the annoying Happy Birthday song nonstop for over 3 hours."],
