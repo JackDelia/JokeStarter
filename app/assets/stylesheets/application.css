@@ -286,6 +286,10 @@
  padding:20px;
  }
 
+ .modal-confirm-reward button {
+   height: 100%;
+ }
+
  .modal-confirm-overlay {
  position:fixed;
  top:0;
@@ -304,7 +308,7 @@
  webkitoverflowscrolling:touch;
  borderradius:4px;
  outline:none;
- height:40%;
+ height:60%;
  width:40%;
  opacity:.95;
  padding:20px;

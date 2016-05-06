@@ -107,7 +107,7 @@ module.exports = React.createClass({
     return (
       <div id="project-detail-container">
         <Modal
-          className="modal-confirm"
+          className="modal-confirm modal-confirm-reward"
           overlayClassName="modal-confirm-overlay"
          isOpen={this.state.showConfirmationModal}
          onRequestClose={this.closeModal}>
