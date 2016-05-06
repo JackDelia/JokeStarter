@@ -130,6 +130,7 @@ module.exports = React.createClass({
            </li>
 
            <li>{followButton}</li>
+           <li id="follow-count">{project.follows} follows</li>
          </ul>
        </nav>
 

@@ -37,12 +37,13 @@ function addComment(comment) {
 }
 
 function addFollow(follow) {
-  _projects[follow.project_id].follows.push(follow);
+  _projects[follow.id].follows++;
   ProjectStore.__emitChange;
 }
 
 function removeFollow(followId) {
-
+  _projects[followId].follows--;
+  ProjectStore.__emitChange;
 }
 
 function addUpdate(update) {

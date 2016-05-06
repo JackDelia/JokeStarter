@@ -9,6 +9,6 @@ end
 
 json.comments @project.comments, :body, :id, :user_id
 json.updates @project.updates, :title, :body, :id, :project_id
-json.follows @project.follows, :project_id, :user_id
+json.follows @project.follows.length
 
 json.funding funding

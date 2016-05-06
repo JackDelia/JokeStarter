@@ -45,6 +45,10 @@
  color:red;
  }
 
+#follow-count {
+  margin-left: 2%;
+}
+
  #header {
  width:100%;
  margin:0;
