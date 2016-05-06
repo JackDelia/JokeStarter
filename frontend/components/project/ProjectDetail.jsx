@@ -9,7 +9,7 @@ var ProjectClientActions = require("../../actions/ProjectClientActions"),
 module.exports = React.createClass({
   getInitialState: function(){
     var project = ProjectStore.find(this.props.params.projectId);
-    return({project: project, timeRemaining: 100000});
+    return({project: project, timeRemaining: 100000, followLock: false, unfollowLock: false});
   },
 
   componentDidMount: function(){
@@ -56,6 +56,8 @@ module.exports = React.createClass({
   follow: function(){
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
+
+    this.setState({followLock: true, unfollowLock: false});
     ProjectClientActions.followProject(UserStore.currentUser().id, this.props.params.projectId);
   },
 
@@ -63,6 +65,7 @@ module.exports = React.createClass({
     if(!UserStore.currentUser())
       hashHistory.push("/signin");
 
+    this.setState({followLock: false, unfollowLock: true});
     ProjectClientActions.unfollowProject(this.props.params.projectId, UserStore.currentUser().id);
   },
 
@@ -100,12 +103,12 @@ module.exports = React.createClass({
         return follow.id === this.state.project.id;
       }.bind(this)))
       var followButton = (
-        <button className="btn btn-default btn-danger" onClick={this.unfollow}>
+        <button className="btn btn-default btn-danger" onClick={this.unfollow} disabled={this.state.unfollowLock}>
           Unfollow
         </button>);
     else
       var followButton = (
-        <button className="btn btn-default btn-success" onClick={this.follow}>
+        <button className="btn btn-default btn-success" onClick={this.follow} disabled={this.state.followLock}>
           Follow
         </button>);
 
