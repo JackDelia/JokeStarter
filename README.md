@@ -7,12 +7,18 @@ Link to live site: [JokeStarter][heroku]
 
 ## Description
 
-JokeStarter is a Kickstarter-like web application that allows users to ask for funding for joke projects.  
+JokeStarter is a Kickstarter-like web application that allows users to ask for funding for joke projects.
+
+It was made using rails to handle the backend and javascript (specifically react.js) to handle the frontend.
 
 ## Features
 
 JokeStarter uses BCrypt's methods to create secure authorization on the rails backend which is then passed to the react frontend via ajax requests. It is then handled by a fluxstore in order to tell if a user is signed in.
 
+Basic features are included like the ability to create and view projects, contribute to them, as well as more social aspects like commenting on projects and following them.
+
+
+Login
 ![auth]
 
 
