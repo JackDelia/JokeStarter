@@ -116,6 +116,7 @@ module.exports = React.createClass({
           {moneyElement}
           {addMoneyButton}
         </div>
+        <img className="avatar-detail" src={user.avatar_url}/>
         <h1>Profile For {user.username}</h1>
 
       <h2>Followed Projects</h2>

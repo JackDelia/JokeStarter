@@ -690,7 +690,7 @@ Jokes are great but the magic is in the loop."]
 
 
 50.times do
-  randomUser = User.new(username: Faker::Internet.user_name, password: "PASSWORD!")
+  randomUser = User.new(username: Faker::Internet.user_name, password: "P$@@W)RD!", avatar_url: Faker::Avatar.image)
   randomUser.reset_session_token_and_save
   (rand(3)+2).times do
     Follow.create(user_id: randomUser.id, project_id: rand(8)+1)

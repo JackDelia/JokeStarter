@@ -1,4 +1,4 @@
-json.(@user, :username, :id)
+json.(@user, :username, :id, :avatar_url)
 
 
 json.money @user.money_in_cents

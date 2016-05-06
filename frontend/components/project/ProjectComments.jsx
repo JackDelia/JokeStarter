@@ -50,10 +50,12 @@ module.exports = React.createClass({
     if(!project)
       return <div/>;
     var comments = project.comments.map(function(comment){
+      var author = UserStore.find(comment.user_id);
       return (<li key={comment.id} className="commentContainer">
         <div className="link"
           onClick={this.goToUser.bind(this, comment.user_id)}>
-          {UserStore.find(comment.user_id).username}
+          <img className="avatar" src={author.avatar_url}/>
+          {author.username}
         </div>
         <p className="comment">{comment.body}</p>
         </li>);
