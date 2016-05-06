@@ -697,6 +697,10 @@ Jokes are great but the magic is in the loop."]
   end
 end
 
+3.times do
+  Follow.create(user_id: guest.id, project_id: rand(8)+1)
+end
+
 200.times do |project|
   Comment.create(user_id: rand(50)+1, project_id: rand(8)+1, body: Faker::Hipster.sentence)
 end

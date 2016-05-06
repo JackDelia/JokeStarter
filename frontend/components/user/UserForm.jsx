@@ -12,6 +12,7 @@ module.exports = React.createClass({
       username: "",
       password: "",
       password2: "",
+      avatar_url: "",
       errors: UserStore.getCurrentErrors()
       };
   },
@@ -39,12 +40,12 @@ module.exports = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
 
-    this.setState({username: "", password: "", password2: ""});
+    this.setState({username: "", password: "", password2: "", avatarUrl: ""});
 
-    UserClientActions.createUser(this.state.username, this.state.password);
+    UserClientActions.createUser(this.state.username, this.state.password, this.state.avatarUrl);
 
 
-    this.setState({username: "", password: "", password2: ""});
+    this.setState({username: "", password: "", password2: "", avatarUrl: ""});
   },
 
   render: function(){
@@ -84,6 +85,11 @@ module.exports = React.createClass({
             placeholder="Retype Password"
             className="sign-in-field"
             valueLink={this.linkState("password2")}/><br/>
+
+          <input type="text"
+            placeholder="Avatar Url"
+            className="sign-in-field"
+            valueLink={this.linkState("avatarUrl")}/><br/>
 
           <input type="submit"
             className="btn btn-success"

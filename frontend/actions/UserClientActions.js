@@ -3,8 +3,8 @@ var UserUtil = require("../util/UserUtil"),
 
 
 module.exports = {
-  createUser: function(username, password){
-    var options = {username: username, password: password};
+  createUser: function(username, password, avatarUrl){
+    var options = {username: username, password: password, avatar_url: avatarUrl};
     UserUtil.createUser(options);
   },
 

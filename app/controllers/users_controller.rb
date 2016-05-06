@@ -34,6 +34,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :money_in_cents);
+    params.require(:user).permit(:username, :password, :money_in_cents, :avatar_url);
   end
 end
