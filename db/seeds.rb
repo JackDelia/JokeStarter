@@ -32,7 +32,7 @@ meat_for_the_meat_god.reset_session_token_and_save
 joker_card = User.new(username: "Travis Peterson and Nick Peterson", password: "callingcard")
 joker_card.reset_session_token_and_save
 
-guest = User.new(username: "Guest", password: "gloriainexcelsiusdiscordia")
+guest = User.new(username: "Guest", password: "gloriainexcelsiusdiscordia", avatar_url: "http://previews.123rf.com/images/roxanabalint/roxanabalint1307/roxanabalint130700229/21215746-Red-grunge-rubber-stamp-with-the-text-Special-guest-written-inside-the-stamp-Stock-Vector.jpg")
 guest.reset_session_token_and_save
 
 
