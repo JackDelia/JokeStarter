@@ -74,7 +74,7 @@
 }
 
  #new-project-button {
- margin-top:35px;
+   margin-right: 2%;
  }
 
  #project-comments-container,#money-form > .text-input-field {
@@ -221,7 +221,7 @@
  }
 
  .left-nav {
- margin-right:43%;
+ margin-right:20%;
  width:30%;
  height:100%;
  display:flex;

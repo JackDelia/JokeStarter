@@ -12,6 +12,7 @@ module.exports = React.createClass({
   componentDidMount: function(){
     this.listener = ProjectStore.addListener(this.changed);
     ProjectClientActions.fetchProjects();
+    window.scrollTo(0, 0);
   },
 
   componentWillUnmount: function(){
@@ -24,13 +25,6 @@ module.exports = React.createClass({
 
   handleClick: function(id){
     hashHistory.push("projects/"+id);
-  },
-
-  createNew: function(){
-    if(UserStore.currentUser())
-      hashHistory.push("newproject");
-    else
-      hashHistory.push("signin");
   },
 
   render: function(){
@@ -50,12 +44,6 @@ module.exports = React.createClass({
         <ul className="project-index-container">
           {projectElements}
         </ul>
-
-        <button className="btn btn-success"
-          id="new-project-button"
-          onClick={this.createNew}>
-          Create New Project
-        </button>
       </div>
     );
   }

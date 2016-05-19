@@ -20,6 +20,7 @@ module.exports = React.createClass({
     this.countdown = setInterval(function(){
       this.setState({timeRemaining: this.state.timeRemaining-1});
     }.bind(this), 1000);
+    window.scrollTo(0, 0);
   },
 
   componentWillUnmount: function(){

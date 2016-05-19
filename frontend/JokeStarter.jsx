@@ -27,7 +27,7 @@ var UserForm = require('./components/user/UserForm'),
 var App = React.createClass({
 
   componentDidMount: function(){
-  
+
   },
 
   clickHeader: function(){
@@ -51,7 +51,7 @@ var App = React.createClass({
 
 
 var routes = (
-  <Router onUpdate={function(){ window.scrollTo(0, 0);}} history={hashHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={ProjectIndex}/>
       <Route path="projects/:projectId" component={ProjectDetail}>

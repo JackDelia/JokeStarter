@@ -16,6 +16,7 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function(){
+    window.scrollTo(0, 0);
     this.listener = UserStore.addListener(this.changed);
     UserClientActions.fetchSingleUser(this.props.params.userId);
   },
@@ -89,7 +90,7 @@ module.exports = React.createClass({
         <img className="thumbnail"
           src={project.thumbnail_image_url}/>
 
-        {project.title}</li>);
+        <div className="thumbnail-title">{project.title}</div></li>);
     }.bind(this));
 
     if (projectElements.length === 0)
@@ -104,7 +105,7 @@ module.exports = React.createClass({
         <img className="thumbnail"
           src={follow.thumbnail_image_url}/>
 
-        {follow.title}</li>);
+        <div className="thumbnail-title">{follow.title}</div></li>);
     }.bind(this));
 
     if (followedProjectElements.length === 0)

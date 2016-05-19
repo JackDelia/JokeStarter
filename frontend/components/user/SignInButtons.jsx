@@ -38,6 +38,13 @@ module.exports = React.createClass({
     this.setState({signInOpen: false, signUpOpen: false});
   },
 
+  createNew: function(){
+    if(UserStore.currentUser())
+      hashHistory.push("newproject");
+    else
+      hashHistory.push("signin");
+  },
+
   goToUser: function(){
     hashHistory.push("/users/"+ this.state.currentUser.id);
   },
@@ -56,6 +63,11 @@ module.exports = React.createClass({
 
           <button className="btn btn-default navbar-btn right-nav"
             onClick={this.signOut}>Sign Out</button>
+            <button className="btn btn-success"
+              id="new-project-button"
+              onClick={this.createNew}>
+              Create New Project
+            </button>
           <SearchBar/>
           <img onClick={this.clickLogo} id="navbar-logo" src="/assets/header-logo.png"/>
       </nav>);

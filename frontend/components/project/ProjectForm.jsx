@@ -15,10 +15,15 @@ module.exports = React.createClass({
       goal: "",
       thumbnailImageUrl: "",
       mainImageUrl: "",
+      deadline: "",
       rewards: [],
       currentRewardVal: "",
       currentRewardBody: ""
     });
+  },
+
+  componentDidMount: function(){
+    window.scrollTo(0, 0);
   },
 
   handleSubmit: function(e){
@@ -40,6 +45,7 @@ module.exports = React.createClass({
       title: this.state.title,
       body: this.state.body,
       goal: this.state.goal,
+      deadline: this.state.deadline*60*60*24,
       thumbnail_image_url: this.state.thumbnailImageUrl,
       main_image_url: this.state.mainImageUrl,
       user_id: UserStore.currentUser().id,
@@ -71,6 +77,10 @@ module.exports = React.createClass({
       </li>;
     });
 
+    var goalText = "";
+    if(rewardsElements.length > 0)
+      goalText = "Current Rewards:";
+
     return (
       <form className="project-form" onSubmit={this.handleSubmit}>
         <input type="text"
@@ -93,13 +103,18 @@ module.exports = React.createClass({
             className="text-input-field"
             valueLink={this.linkState("mainImageUrl")}/><br/>
 
+          <input type="number"
+            placeholder="Deadline (in days)"
+            className="text-input-field"
+            valueLink={this.linkState("deadline")}/><br/>
+
             <textarea
               rows="4" cols="40"
               className="input-area"
               placeholder="Talk About Your Project Here!"
               valueLink={this.linkState("body")}/><br/>
 
-            <div>Current Rewards:</div>
+            <div>{goalText}</div>
       <ul className="project-form-rewards">
         {rewardsElements}
       </ul>
